@@ -1,4 +1,4 @@
-# MiniGreX CMS (Beta) normaly woks still develop
+# MiniGreX CMS (Beta) normaly woks.i still develop
 ## Introduction
 MiniGreX CMS is a lightweight and secure content management system that allows users to share links, images, videos, and comments. The system is designed to be easy to use and to work on different database systems like MySQL, MariaDB, and Postgres.
 
