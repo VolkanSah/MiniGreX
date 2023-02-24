@@ -1,6 +1,6 @@
 # MiniGreX-CMS
 ### MiniGreX-CMS ist ein einfaches Content-Management-System für die Verwaltung von Beiträgen und Kommentaren. 
-Die Anwendung wurde in PHP geschrieben und nutzt eine MySQL-Datenbank für die Speicherung von Daten. Die Anwendung kann jedoch auch mit anderen Datenbanksystemen wie PostgreSQL und MariaDB verwendet werden.
+Die Anwendung wurde in PHP geschrieben mit dem Focus auf Sicherheit und nutzt eine PostgreSQL-Datenbank für die Speicherung von Daten. Die Anwendung kann jedoch auch mit anderen Datenbanksystemen wie MySQL und MariaDB verwendet werden.
 
 ## Voraussetzungen
 Um MiniGreX-CMS verwenden zu können, benötigen Sie:
