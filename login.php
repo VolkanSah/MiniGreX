@@ -1,89 +1,74 @@
 <?php
-/*
-Hier werden die Benutzereingaben validiert und die Anmeldung über ein Prepared Statement und die Verwendung von password_verify durchgeführt, 
-um SQL-Injektionen und Passwort-Hash-Angriffe zu vermeiden. Auch hier werden Fehlermeldungen sicher ausgegeben, um XSS-Angriffe zu vermeiden.
-*/
-
-// Erforderliche Dateien einbinden
 require_once "config.php";
 require_once "functions.php";
+
+// Wenn bereits angemeldet, dann weiterleiten zur Index-Seite
+if (is_logged_in()) {
+  header('Location: index.php');
+  exit();
+}
 
 // Verbindung zur Datenbank herstellen
 $conn = get_connection();
 
 // Formularabschicken überprüfen
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  // Eingabe validieren
-  $errors = [];
+  $username = mysqli_real_escape_string($conn, $_POST['username']);
+  $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-  if (empty($_POST['username'])) {
-    $errors[] = "Bitte geben Sie einen Benutzernamen ein.";
-  }
+  // Benutzerdaten abrufen
+  $stmt = $conn->prepare("SELECT id, password FROM users WHERE username = ?");
+  $stmt->bind_param("s", $username);
+  $stmt->execute();
+  $result = $stmt->get_result();
+  $row = $result->fetch_assoc();
 
-  if (empty($_POST['password'])) {
-    $errors[] = "Bitte geben Sie ein Passwort ein.";
-  }
+  // Passwort überprüfen
+  if ($row && password_verify($password, $row['password'])) {
+    // Anmeldung erfolgreich, Session starten
+    session_start();
+    $_SESSION['user_id'] = $row['id'];
+    $_SESSION['user_role'] = 'user';
 
-  if (empty($errors)) {
-    // Benutzer authentifizieren
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows == 1) {
-      $user = $result->fetch_assoc();
-
-      if (password_verify($password, $user['password'])) {
-        // Login erfolgreich
-        session_start();
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['username'] = $user['username'];
-
-        header('Location: index.php');
-        exit();
-      } else {
-        $errors[] = "Benutzername oder Passwort sind falsch.";
-      }
-    } else {
-      $errors[] = "Benutzername oder Passwort sind falsch.";
-    }
+    // Weiterleiten zur Index-Seite
+    header('Location: index.php');
+    exit();
+  } else {
+    $error_message = "Falscher Benutzername oder Passwort.";
   }
 }
 
 // HTML-Kopf ausgeben
-echo "<!DOCTYPE html>
+$html = "<!DOCTYPE html>
 <html>
 <head>
-  <title>Login</title>
+  <title>Anmeldung</title>
 </head>
 <body>
-  <h1>Login</h1>";
+  <h1>Anmeldung</h1>";
 
-// Fehlermeldungen ausgeben
-if (!empty($errors)) {
-  foreach ($errors as $error) {
-    echo "<p style='color: red;'>" . htmlspecialchars($error) . "</p>";
-  }
+// Fehlermeldung ausgeben, falls vorhanden
+if (isset($error_message)) {
+  $html .= "<p>{$error_message}</p>";
 }
 
-// Login-Formular ausgeben
-echo "<form method='post'>
-  <label for='username'>Benutzername:</label>
-  <input type='text' id='username' name='username'>
-  <br>
-  <label for='password'>Passwort:</label>
-  <input type='password' id='password' name='password'>
-  <br>
-  <input type='submit' value='Login'>
-</form>";
+// Anmeldeformular ausgeben
+$html .= "<form method='post'>
+    <label for='username'>Benutzername:</label>
+    <input type='text' id='username' name='username'>
+    <br>
+    <label for='password'>Passwort:</label>
+    <input type='password' id='password' name='password'>
+    <br>
+    <input type='submit' value='Anmelden'>
+  </form>";
 
 // HTML-Fuß ausgeben
-echo "</body>
+$html .= "</body>
 </html>";
+
+// HTML-Output ausgeben
+echo $html;
 
 // Verbindung zur Datenbank schließen
 $conn->close();
