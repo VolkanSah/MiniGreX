@@ -4,26 +4,25 @@ Die Anwendung wurde in PHP geschrieben und nutzt eine MySQL-Datenbank für die S
 
 ## Voraussetzungen
 Um MiniGreX-CMS verwenden zu können, benötigen Sie:
-
 - Eine Webserver-Software wie Apache oder Nginx
 - PHP-Version 7.0 oder höher
 - Eine MySQL-, PostgreSQL- oder MariaDB-Datenbank
-- 
 ### Installation
 Um MiniGreX-CMS zu installieren, folgen Sie bitte diesen Schritten:
 
 - Laden Sie den Quellcode von GitHub herunter oder klonen Sie das Repository.
--Kopieren Sie die Dateien auf Ihren Webserver.
--Erstellen Sie eine neue Datenbank und importieren Sie das schema.sql-Skript, um die erforderlichen Tabellen zu erstellen.
--Konfigurieren Sie die Verbindungsdaten zur Datenbank, indem Sie die config.php-Datei anpassen.
--Passen Sie die Anwendung nach Ihren Wünschen an, indem Sie Änderungen am Code vornehmen.
--Rufen Sie die Anwendung im Browser auf, um sie zu verwenden.
--Funktionen
--Anmeldung für Benutzer
--Anmeldung für Admins
--Hinzufügen von Beiträgen mit Links zu anderen Webseiten
--Hinzufügen von Kommentaren zu Beiträgen
--Administrationsbereich für die Verwaltung von Beiträgen, Kommentaren und Benutzern
+- Kopieren Sie die Dateien auf Ihren Webserver.
+- Erstellen Sie eine neue Datenbank und importieren Sie das schema.sql-Skript, um die erforderlichen Tabellen zu erstellen.
+- Konfigurieren Sie die Verbindungsdaten zur Datenbank, indem Sie die config.php-Datei anpassen.
+- Passen Sie die Anwendung nach Ihren Wünschen an, indem Sie Änderungen am Code vornehmen.
+- Rufen Sie die Anwendung im Browser auf, um sie zu verwenden.
+- Funktionen
+- Anmeldung für Benutzer
+- Anmeldung für Admins
+- Hinzufügen von Beiträgen mit Links zu anderen Webseiten
+- Hinzufügen von Kommentaren zu Beiträgen
+- Administrationsbereich für die Verwaltung von Beiträgen, Kommentaren und Benutzern
+- 
 ## Sicherheit
 MiniGreX-CMS wurde mit Sicherheit im Hinterkopf entwickelt. Die Anwendung verwendet Prepared Statements, um SQL-Injektionen zu vermeiden. Die Passwörter werden gehasht, um sicherzustellen, dass sie nicht im Klartext in der Datenbank gespeichert werden. Das Anmeldeformular verfügt über einen CSRF-Schutz, um vor Cross-Site Request Forgery-Angriffen zu schützen.
 
