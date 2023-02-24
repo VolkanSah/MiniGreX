@@ -1,4 +1,4 @@
-# MiniGreX CMS
+# MiniGreX CMS !!!  Not Working !!! Still devlop
 MiniGreX CMS ist ein kleines CMS, das es Benutzern ermöglicht, Inhalte zu teilen und Kommentare zu veröffentlichen. Das CMS bietet eine Kommentarfunktion sowie eine Möglichkeit für den Admin, Benutzer anzulegen und zu löschen.
 
 ## Installation
