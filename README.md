@@ -47,7 +47,7 @@ As an admin, you can also access the admin panel by clicking on the "Admin" link
 MiniGreX-CMS has been designed with security in mind, and the code has been written to minimize the risk of SQL injection attacks and other security vulnerabilities. To ensure maximum security, we recommend keeping the CMS up-to-date with the latest security patches and using strong passwords for all user accounts.
 
 ## Credits
-MiniGreX CMS was created by Volkan  Kücükbudak
+MiniGreX CMS was created by Volkan Kücükbudak
 
 ## License
 MiniGreX CMS is licensed under the MIT License. Feel free to use it for personal or commercial use.
