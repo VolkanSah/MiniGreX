@@ -22,7 +22,6 @@ Um MiniGreX-CMS zu installieren, folgen Sie bitte diesen Schritten:
 - Hinzufügen von Beiträgen mit Links zu anderen Webseiten
 - Hinzufügen von Kommentaren zu Beiträgen
 - Administrationsbereich für die Verwaltung von Beiträgen, Kommentaren und Benutzern
-- 
 ## Sicherheit
 MiniGreX-CMS wurde mit Sicherheit im Hinterkopf entwickelt. Die Anwendung verwendet Prepared Statements, um SQL-Injektionen zu vermeiden. Die Passwörter werden gehasht, um sicherzustellen, dass sie nicht im Klartext in der Datenbank gespeichert werden. Das Anmeldeformular verfügt über einen CSRF-Schutz, um vor Cross-Site Request Forgery-Angriffen zu schützen.
 
