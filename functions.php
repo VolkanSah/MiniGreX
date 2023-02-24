@@ -100,3 +100,15 @@ function login_admin($username, $password) {
 }
 
 // Admin ausloggen
+
+function logout_admin() {
+  unset($_SESSION['admin_id']);
+}
+function is_admin() {
+  session_start();
+  if (isset($_SESSION['admin_id'])) {
+    return true;
+  } else {
+    return false;
+  }
+}
