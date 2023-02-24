@@ -1,7 +1,9 @@
 <?php
 
 /*
-Hier wird eine sichere Verbindung zur Datenbank über Prepared Statements hergestellt, indem mysqli anstelle von PDO verwendet wurde. Zuerst wurde eine Verbindung zur Datenbank hergestellt und überprüft, ob die Verbindung erfolgreich war. Dann wurden die SQL-Statements in Prepared Statements umgewandelt und vorbereitet. Ansch
+Hier wird eine sichere Verbindung zur Datenbank über Prepared Statements hergestellt, indem mysqli anstelle von PDO verwendet wurde. 
+Zuerst wird eine Verbindung zur Datenbank hergestellt und überprüft, ob die Verbindung erfolgreich war. 
+Dann wird die SQL-Statements in Prepared Statements umgewandelt und vorbereitet. Ansch
 
 
 */
