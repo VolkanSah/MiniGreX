@@ -1,9 +1,4 @@
 <?php
-/*
-In diesem Beispiel wird das prepare()-Methode von PDO verwendet, um ein Prepared Statement zu erstellen. 
-Das Statement mit den erforderlichen Parametern wird ausgeführt, indem execute()-Methode aufgerufen wird.
-
-*/
 
 // Erforderliche Dateien einbinden
 require_once "config.php";
@@ -12,35 +7,48 @@ require_once "functions.php";
 // Verbindung zur Datenbank herstellen
 $conn = get_connection();
 
-// Komplette Liste von Einträgen aus der Datenbank holen
-$stmt = $conn->prepare("SELECT * FROM entries ORDER BY id DESC");
-$stmt->execute();
-$result = $stmt->get_result();
+// Seitentitel und Meta-Informationen laden
+$site_info = get_site_info($conn);
 
-// HTML-Kopf ausgeben
-echo "<!DOCTYPE html>
+// HTML-Kopf in Variable schreiben
+$html = "<!DOCTYPE html>
 <html>
 <head>
-  <title>MiniGreX</title>
+  <title>" . htmlspecialchars($site_info['title'], ENT_QUOTES) . "</title>
+  <meta name='description' content='" . htmlspecialchars($site_info['description'], ENT_QUOTES) . "'>
 </head>
 <body>
-  <h1>MiniGreX</h1>
-  <form method='post'>
-    <input type='text' name='url' placeholder='URL eingeben'>
-    <input type='submit' value='Teilen'>
-  </form>
-  <h2>Neueste Einträge</h2>
-  <ul>";
+  <h1>" . htmlspecialchars($site_info['title'], ENT_QUOTES) . "</h1>";
 
-// Neueste Einträge anzeigen
-while ($row = $result->fetch_assoc()) {
-  echo "<li><a href='" . htmlspecialchars($row['url']) . "' target='_blank'>" . htmlspecialchars($row['title']) . "</a></li>";
+// Alle Beiträge aus der Datenbank laden
+$posts = get_all_posts($conn);
+
+// Alle Beiträge anzeigen
+foreach ($posts as $post) {
+  $comments = get_comments_for_post($conn, $post['id']);
+  $username = get_username($conn, $post['benutzer_id']);
+  $html .= "<h2>" . htmlspecialchars($post['link'], ENT_QUOTES) . " von " . htmlspecialchars($username, ENT_QUOTES) . "</h2>";
+  foreach ($comments as $comment) {
+    $username = get_username($conn, $comment['benutzer_id']);
+    $html .= "<p>" . htmlspecialchars($comment['text'], ENT_QUOTES) . " von " . htmlspecialchars($username, ENT_QUOTES) . "</p>";
+  }
+  if (is_logged_in()) {
+    $html .= "<form method='post' action='add_comment.php'>
+      <input type='hidden' name='post_id' value='" . htmlspecialchars($post['id'], ENT_QUOTES) . "'>
+      <label for='text'>Kommentar hinzufügen:</label>
+      <input type='text' id='text' name='text'>
+      <br>
+      <input type='submit' value='Absenden'>
+    </form>";
+  }
 }
 
-// HTML-Fuss ausgeben
-echo "</ul>
-</body>
+// HTML-Fuß in Variable schreiben
+$html .= "</body>
 </html>";
+
+// HTML-Output ausgeben
+print($html);
 
 // Verbindung zur Datenbank schließen
 $conn->close();
