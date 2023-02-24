@@ -1,11 +1,30 @@
-  <footer class="pt-5 my-5 text-muted border-top">
-    Created by the Bootstrap team &middot; &copy; 2022
-  </footer>
-</div>
+<?php
+/* 
+MiniGreX 1.0
+*/
 
-<!-- function - check if plugin get_local_settings than load, if egt_local_settings plugin is disabled load from cdn.finish funktion volkan -->
-    <script src="https://cdn.com/bootstrap.bundle.min.js"></script>
+// load required files
+require_once "config.php";
+require_once "functions.php";
 
-      
-  </body>
-</html>
+// get database connection
+$conn = get_connection();
+
+// Load sitetitel and Meta-informationen
+$site_info = get_site_info($conn);  
+
+$html .= "<footer class="pt-5 my-5 text-muted border-top">";
+$html .= " Created with MiniGreX &copy; 2023";
+$html .= " </footer>";
+$html .= "</div>";
+$html .= "    <script src="https://cdn.com/bootstrap.bundle.min.js"></script>";
+    
+// HTML-Fuß in Variable schreiben
+$html .= "</body>
+</html>";
+
+// HTML-Output ausgeben
+print($html);
+
+// Verbindung zur Datenbank schließen
+$conn->close();
