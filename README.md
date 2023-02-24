@@ -4,9 +4,17 @@ MiniGreX CMS is a lightweight and secure content management system that allows u
 
 This CMS is built with PHP and uses prepared statements to prevent SQL injection attacks. The code has been optimized for performance, making it a fast and efficient way to manage content.
 
+Um MiniGreX-CMS verwenden zu können, benötigen Sie:
+
+Eine Webserver-Software wie Apache oder Nginx
+PHP-Version 7.0 oder höher
+Eine MySQL-, PostgreSQL- oder MariaDB-Datenbank
+
 ## Installation
 To install MiniGreX CMS, follow these steps:
-
+- install Webserver with Apache or Nginx
+- install PHP 7.0 or higher
+- install MySQL, PostgreSQL or MariaDB 
 - Download or clone the repository from Github.
 - Create a database for MiniGreX CMS in MySQL, MariaDB, or Postgres.
 - Import the SQL file sgl.txt into your database.
