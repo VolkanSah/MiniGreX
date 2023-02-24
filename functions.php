@@ -1,269 +1,102 @@
 <?php
 
-include_once 'config.php';
-
 // Verbindung zur Datenbank herstellen
-$conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
-
-if ($conn->connect_error) {
-  die("Verbindung fehlgeschlagen: " . $conn->connect_error);
-}
-
-/**
- * Fügt einen neuen Benutzer zur Datenbank hinzu.
- *
- * @param string $benutzername Der Benutzername des Benutzers.
- * @param string $email Die E-Mail-Adresse des Benutzers.
- * @param string $passwort Das Passwort des Benutzers.
- *
- * @return boolean TRUE, wenn der Benutzer erfolgreich hinzugefügt wurde, ansonsten FALSE.
- */
-function add_user($benutzername, $email, $passwort) {
-  global $conn;
-
-  $stmt = $conn->prepare("INSERT INTO benutzer (benutzername, email, passwort) VALUES (?, ?, ?)");
-  $stmt->bind_param("sss", $benutzername, $email, $passwort);
-
-  return $stmt->execute();
-}
-
-/**
- * Holt alle Benutzer aus der Datenbank.
- *
- * @return array Ein Array mit allen Benutzern.
- */
-function get_users() {
-  global $conn;
-
-  $result = $conn->query("SELECT * FROM benutzer");
-
-  if ($result->num_rows > 0) {
-    return $result->fetch_all(MYSQLI_ASSOC);
-  } else {
-    return array();
+function get_connection() {
+  $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+  if ($conn->connect_error) {
+    die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
   }
+  return $conn;
 }
-/**
- * Holt einen Benutzer aus der Datenbank anhand seiner ID.
- *
- * @param int $id Die ID des Benutzers.
- *
- * @return array Das Array mit den Benutzerdaten.
- */
-function get_user($id) {
-  global $conn;
 
-  $stmt = $conn->prepare("SELECT * FROM benutzer WHERE id = ?");
-  $stmt->bind_param("i", $id);
+// Benutzer hinzufügen
+function add_user($username, $password) {
+  $hash = password_hash($password, PASSWORD_DEFAULT);
+  $conn = get_connection();
+  $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+  $stmt->bind_param("ss", $username, $hash);
   $stmt->execute();
-  $result = $stmt->get_result();
-
-  if ($result->num_rows > 0) {
-    return $result->fetch_assoc();
-  } else {
-    return array();
-  }
+  $stmt->close();
+  $conn->close();
 }
 
-/**
- * Aktualisiert einen Benutzer in der Datenbank anhand seiner ID.
- *
- * @param int $id Die ID des Benutzers.
- * @param string $benutzername Der Benutzername des Benutzers.
- * @param string $email Die E-Mail-Adresse des Benutzers.
- * @param string $passwort Das Passwort des Benutzers.
- *
- * @return boolean TRUE, wenn der Benutzer erfolgreich aktualisiert wurde, ansonsten FALSE.
- */
-function update_user($id, $benutzername, $email, $passwort) {
-  global $conn;
-
-  $stmt = $conn->prepare("UPDATE benutzer SET benutzername = ?, email = ?, passwort = ? WHERE id = ?");
-  $stmt->bind_param("sssi", $benutzername, $email, $passwort, $id);
-
-  return $stmt->execute();
+// Benutzer aktualisieren
+function update_user($id, $username, $password) {
+  $hash = password_hash($password, PASSWORD_DEFAULT);
+  $conn = get_connection();
+  $stmt = $conn->prepare("UPDATE users SET username = ?, password = ? WHERE id = ?");
+  $stmt->bind_param("ssi", $username, $hash, $id);
+  $stmt->execute();
+  $stmt->close();
+  $conn->close();
 }
 
-/**
- * Löscht einen Benutzer aus der Datenbank anhand seiner ID.
- *
- * @param int $id Die ID des Benutzers.
- *
- * @return boolean TRUE, wenn der Benutzer erfolgreich gelöscht wurde, ansonsten FALSE.
- */
+// Benutzer löschen
 function delete_user($id) {
-  global $conn;
-
-  $stmt = $conn->prepare("DELETE FROM benutzer WHERE id = ?");
+  $conn = get_connection();
+  $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
   $stmt->bind_param("i", $id);
-
-  return $stmt->execute();
-}
-
-/**
- * Fügt einen neuen Beitrag zur Datenbank hinzu.
- *
- * @param int $benutzer_id Die ID des Benutzers, der den Beitrag erstellt hat.
- * @param string $titel Der Titel des Beitrags.
- * @param string $link Der Link zum Video.
- *
- * @return boolean TRUE, wenn der Beitrag erfolgreich hinzugefügt wurde, ansonsten FALSE.
- */
-function add_post($benutzer_id, $titel, $link) {
-  global $conn;
-
-  $stmt = $conn->prepare("INSERT INTO beitraege (benutzer_id, titel, link) VALUES (?, ?, ?)");
-  $stmt->bind_param("iss", $benutzer_id, $titel, $link);
-
-  return $stmt->execute();
-}
-
-/**
- * Holt alle Beiträge aus der Datenbank.
- *
- * @return array Ein Array mit allen Beiträgen.
- */
-function get_posts() {
-  global $conn;
-
-  $result = $conn->query("SELECT * FROM beitraege");
-
-  if ($result->num_rows > 0) {
-    return $result->fetch_all(MYSQLI_ASSOC);
-  } else {
-    return array();
-  }
-}
-
-/**
- * Holt alle Beiträge eines Benutzers aus der Datenbank anhand seiner ID.
- *
- * @param int $benutzer_id Die ID des Benutzers.
- *
- * @return array Ein Array mit allen Beiträgen des Benutzers.
- */
-function get_posts_by_user($benutzer_id) {
-  global $conn;
-
-  $stmt = $conn->prepare("SELECT * FROM beitraege WHERE benutzer_id = ?");
-  $stmt->bind_param("i", $benutzer_id);
   $stmt->execute();
-  $result = $stmt->get_result();
-
-  if ($result->num_rows > 0) {
-    return $result->fetch_all(MYSQLI_ASSOC);
-  } else {
-    return array();
-  }
+  $stmt->close();
+  $conn->close();
 }
-/**
- * Holt einen Beitrag aus der Datenbank anhand seiner ID.
- *
- * @param int $id Die ID des Beitrags.
- *
- * @return array Das Array mit den Beitragsdaten.
- */
-function get_post($id) {
-  global $conn;
 
-  $stmt = $conn->prepare("SELECT * FROM beitraege WHERE id = ?");
+// Benutzer nach ID abrufen
+function get_user($id) {
+  $conn = get_connection();
+  $stmt = $conn->prepare("SELECT * FROM users WHERE id = ?");
   $stmt->bind_param("i", $id);
   $stmt->execute();
   $result = $stmt->get_result();
-
-  if ($result->num_rows > 0) {
-    return $result->fetch_assoc();
-  } else {
-    return array();
-  }
-}
-/**
- * Aktualisiert einen Beitrag in der Datenbank anhand seiner ID.
- *
- * @param int $id Die ID des Beitrags.
- * @param int $benutzer_id Die ID des Benutzers, der den Beitrag erstellt hat.
- * @param string $titel Der Titel des Beitrags.
- * @param string $link Der Link zum Video.
- *
- * @return boolean TRUE, wenn der Beitrag erfolgreich aktualisiert wurde, ansonsten FALSE.
- */
-function update_post($id, $benutzer_id, $titel, $link) {
-  global $conn;
-
-  $stmt = $conn->prepare("UPDATE beitraege SET benutzer_id = ?, titel = ?, link = ? WHERE id = ?");
-  $stmt->bind_param("issi", $benutzer_id, $titel, $link, $id);
-
-  return $stmt->execute();
+  $user = $result->fetch_assoc();
+  $stmt->close();
+  $conn->close();
+  return $user;
 }
 
-/**
- * Löscht einen Beitrag aus der Datenbank anhand seiner ID.
- *
- * @param int $id Die ID des Beitrags.
- *
- * @return boolean TRUE, wenn der Beitrag erfolgreich gelöscht wurde, ansonsten FALSE.
- */
-function delete_post($id) {
-  global $conn;
-
-  $stmt = $conn->prepare("DELETE FROM beitraege WHERE id = ?");
-  $stmt->bind_param("i", $id);
-
-  return $stmt->execute();
-}
-
-/**
- * Fügt einen neuen Kommentar zu einem Beitrag in der Datenbank hinzu.
- *
- * @param int $beitrag_id Die ID des Beitrags, zu dem der Kommentar hinzugefügt wird.
- * @param int $benutzer_id Die ID des Benutzers, der den Kommentar erstellt hat.
- * @param string $text Der Text des Kommentars.
- *
- * @return boolean TRUE, wenn der Kommentar erfolgreich hinzugefügt wurde, ansonsten FALSE.
- */
-function add_comment($beitrag_id, $benutzer_id, $text) {
-  global $conn;
-
-  $stmt = $conn->prepare("INSERT INTO kommentare (beitrag_id, benutzer_id, text) VALUES (?, ?, ?)");
-  $stmt->bind_param("iis", $beitrag_id, $benutzer_id, $text);
-
-  return $stmt->execute();
-}
-/**
- * Holt alle Kommentare zu einem Beitrag aus der Datenbank anhand seiner ID.
- *
- * @param int $beitrag_id Die ID des Beitrags.
- *
- * @return array Ein Array mit allen Kommentaren zu dem Beitrag.
- */
-function get_comments($beitrag_id) {
-  global $conn;
-
-  $stmt = $conn->prepare("SELECT * FROM kommentare WHERE beitrag_id = ?");
-  $stmt->bind_param("i", $beitrag_id);
+// Alle Benutzer abrufen
+function get_users() {
+  $conn = get_connection();
+  $stmt = $conn->prepare("SELECT * FROM users");
   $stmt->execute();
   $result = $stmt->get_result();
-
-  if ($result->num_rows > 0) {
-    return $result->fetch_all(MYSQLI_ASSOC);
-  } else {
-    return array();
+  $users = array();
+  while ($user = $result->fetch_assoc()) {
+    $users[] = $user;
   }
+  $stmt->close();
+  $conn->close();
+  return $users;
 }
 
-/**
- * Löscht einen Kommentar aus der Datenbank anhand seiner ID.
- *
- * @param int $id Die ID des Kommentars.
- *
- * @return boolean TRUE, wenn der Kommentar erfolgreich gelöscht wurde, ansonsten FALSE.
- */
-function delete_comment($id) {
-  global $conn;
-
-  $stmt = $conn->prepare("DELETE FROM kommentare WHERE id = ?");
-  $stmt->bind_param("i", $id);
-
-  return $stmt->execute();
+// Admin-ID abrufen
+function get_admin_id() {
+  if (!isset($_SESSION['admin_id'])) {
+    return 0;
+  }
+  return intval($_SESSION['admin_id']);
 }
 
+// Admin überprüfen
+function is_admin() {
+  return get_admin_id() > 0;
+}
+
+// Admin einloggen
+function login_admin($username, $password) {
+  $conn = get_connection();
+  $stmt = $conn->prepare("SELECT id, password FROM admins WHERE username = ?");
+  $stmt->bind_param("s", $username);
+  $stmt->execute();
+  $result = $stmt->get_result();
+  $admin = $result->fetch_assoc();
+  $stmt->close();
+  $conn->close();
+  if (password_verify($password, $admin['password'])) {
+    $_SESSION['admin_id'] = $admin['id'];
+    return true;
+  }
+  return false;
+}
+
+// Admin ausloggen
