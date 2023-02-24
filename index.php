@@ -1,16 +1,33 @@
 <?php
+/* 
+MiniGreX 1.0
+*/
 
-// Erforderliche Dateien einbinden
+// load required files
 require_once "config.php";
 require_once "functions.php";
 
-// Verbindung zur Datenbank herstellen
+// get database connection
 $conn = get_connection();
 
-// Seitentitel und Meta-Informationen laden
+// Load some stuff
+$seo_manager = get_site_seo_plugin($conn);
+$image_db = get_site_image_plugin($conn);
+$video_db = get_site_video_plugin($conn);
+$auto_cache = get_site_cache_plugin($conn);
+$role_manager = get_site_role_plugin($conn);
+$profile_manager = get_site_profile_plugin($conn);
+$get_local_settings = get_site_local_plugin($conn);
+$get_gateway_manager = get_site_gateway_plugin($conn);
+// Load sitetitel and Meta-informationen
 $site_info = get_site_info($conn);
 
-// HTML-Kopf in Variable schreiben
+
+
+
+
+
+// HTML-Kopf in Variable 
 $html = "<!DOCTYPE html>
 <html>
 <head>
