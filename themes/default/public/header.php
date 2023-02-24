@@ -21,7 +21,6 @@ $html = "<meta charset="utf-8">";
 $html = "<meta name="viewport" content="width=device-width, initial-scale=1">";
 $html = "<meta name='description' content='" . htmlspecialchars($site_info['description'], ENT_QUOTES) . "'>";
 $html = "</head>";
-
 $html = "<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/starter-template/">";
 $html = "<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">";
 $html = " <link href="starter-template.css" rel="stylesheet">";
