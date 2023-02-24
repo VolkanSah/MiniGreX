@@ -1,0 +1,19 @@
+CREATE TABLE benutzer (
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE beitrag (
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  benutzer_id INTEGER NOT NULL,
+  link VARCHAR(255) NOT NULL,
+  FOREIGN KEY (benutzer_id) REFERENCES benutzer(id)
+);
+
+CREATE TABLE kommentar (
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  beitrag_id INTEGER NOT NULL,
+  text VARCHAR(255) NOT NULL,
+  FOREIGN KEY (beitrag_id) REFERENCES beitrag(id)
+);
