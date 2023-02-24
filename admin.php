@@ -1,28 +1,16 @@
 <?php
 
-/*
-Hier wird eine sichere Verbindung zur Datenbank über Prepared Statements hergestellt, indem mysqli anstelle von PDO verwendet wurde. 
-Zuerst wird eine Verbindung zur Datenbank hergestellt und überprüft, ob die Verbindung erfolgreich war. 
-Dann wird die SQL-Statements in Prepared Statements umgewandelt und vorbereitet. Ansch
-
-
-*/
-
 // Erforderliche Dateien einbinden
 require_once "config.php";
 require_once "functions.php";
 
 // Verbindung zur Datenbank herstellen
-$conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-// Verbindung überprüfen
+// Verbindung prüfen
 if ($conn->connect_error) {
   die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
 }
-
-// Prepared Statements vorbereiten
-$updateSiteInfoStmt = $conn->prepare("UPDATE site_info SET title = ?, description = ?");
-$updateAdminPasswordStmt = $conn->prepare("UPDATE users SET password = ? WHERE id = ?");
 
 // Admin überprüfen
 if (!is_admin()) {
@@ -34,23 +22,41 @@ if (!is_admin()) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Seitentitel und Meta-Informationen speichern
   if (isset($_POST['title']) && isset($_POST['description'])) {
-    $updateSiteInfoStmt->bind_param("ss", $_POST['title'], $_POST['description']);
-    $updateSiteInfoStmt->execute();
+    $title = mysqli_real_escape_string($conn, $_POST['title']);
+    $description = mysqli_real_escape_string($conn, $_POST['description']);
+    $stmt = $conn->prepare("UPDATE site_info SET title = ?, description = ?");
+    $stmt->bind_param("ss", $title, $description);
+    $stmt->execute();
   }
 
   // Admin-Passwort ändern
   if (isset($_POST['old_password']) && isset($_POST['new_password'])) {
-    $hashedPassword = password_hash($_POST['new_password'], PASSWORD_DEFAULT);
-    $updateAdminPasswordStmt->bind_param("si", $hashedPassword, get_current_user_id());
-    $updateAdminPasswordStmt->execute();
+    $old_password = mysqli_real_escape_string($conn, $_POST['old_password']);
+    $new_password = mysqli_real_escape_string($conn, $_POST['new_password']);
+    $admin_id = get_admin_id();
+    $hash = password_hash($new_password, PASSWORD_DEFAULT);
+    $stmt = $conn->prepare("SELECT password FROM admins WHERE id = ?");
+    $stmt->bind_param("i", $admin_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    if (password_verify($old_password, $row['password'])) {
+      $stmt = $conn->prepare("UPDATE admins SET password = ? WHERE id = ?");
+      $stmt->bind_param("si", $hash, $admin_id);
+      $stmt->execute();
+    }
   }
 }
 
 // Seitentitel und Meta-Informationen laden
-$site_info = get_site_info($conn);
+$stmt = $conn->prepare("SELECT title, description FROM site_info");
+$stmt->execute();
+$result = $stmt->get_result();
+$site_info = $result->fetch_assoc();
 
-// HTML-Kopf ausgeben
-echo "<!DOCTYPE html>
+// HTML-Kopf in Variable schreiben
+$html = <<<HTML
+<!DOCTYPE html>
 <html>
 <head>
   <title>Administration</title>
@@ -79,11 +85,19 @@ echo "<!DOCTYPE html>
   </form>
     </form>
 </body>
-</html>";
+</html>
+HTML;
 
-// Prepared Statements schließen
-$updateSiteInfoStmt->close();
-$updateAdminPasswordStmt->close();
+// HTML-Fuß in Variable schreiben
+$html .= <<<HTML
+</body>
+</html>
+HTML;
+
+// HTML-Output ausgeben
+print($html);
 
 // Verbindung zur Datenbank schließen
 $conn->close();
+
+
