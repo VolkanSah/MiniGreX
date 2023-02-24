@@ -1,5 +1,4 @@
 RewriteEngine On
-
 # Leite Anfragen an index.php weiter, wenn keine Datei oder kein Verzeichnis gefunden wird
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
