@@ -1,4 +1,8 @@
 <?php
+/*
+Hier wird das eingegebene Passwort mit password_hash() gehasht und dann mit einem Prepared Statement in die Datenbank eingefügt.
+Auch hier wird get_connection() verwendet, um eine sichere Verbindung zur Datenbank herzustellen.
+*/
 
 // Erforderliche Dateien einbinden
 require_once "config.php";
@@ -9,9 +13,15 @@ $conn = get_connection();
 
 // Formularabschicken überprüfen
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  // Benutzer hinzufügen
+  // Benutzer registrieren
   if (isset($_POST['username']) && isset($_POST['password'])) {
-    add_user($_POST['username'], $_POST['password']);
+    $username = $_POST['username'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+    // Prepared Statement ausführen
+    $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+    $stmt->bind_param("ss", $username, $password);
+    $stmt->execute();
   }
 }
 
