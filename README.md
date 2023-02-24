@@ -1,20 +1,36 @@
-# MiniGreX CMS !!!  Not Working !!! Still devlop
-MiniGreX CMS ist ein kleines CMS, das es Benutzern ermöglicht, Inhalte zu teilen und Kommentare zu veröffentlichen. Das CMS bietet eine Kommentarfunktion sowie eine Möglichkeit für den Admin, Benutzer anzulegen und zu löschen.
+# MiniGreX CMS
+## Introduction
+MiniGreX CMS is a lightweight and secure content management system that allows users to share links, images, videos, and comments. The system is designed to be easy to use and to work on different database systems like MySQL, MariaDB, and Postgres.
+
+This CMS is built with PHP and uses prepared statements to prevent SQL injection attacks. The code has been optimized for performance, making it a fast and efficient way to manage content.
 
 ## Installation
-Laden Sie das Projekt von Github herunter.
-Kopieren Sie die Dateien in das Verzeichnis, in dem Sie das CMS hosten möchten.
-Stellen Sie sicher, dass der Webserver (z.B. Apache) und PHP installiert sind.
-Richten Sie eine PostgreSQL-Datenbank ein und geben Sie die Zugangsdaten in der Datei config.php ein.
-Rufen Sie die Datei index.php im Browser auf und beginnen Sie mit der Verwendung des CMS.
-Verwendung
-Nach der Installation können Benutzer über die Benutzerverwaltung des CMS hinzugefügt werden. Diese Seite ist nur für den Admin zugänglich. Anschließend können Benutzer Beiträge erstellen und Kommentare zu vorhandenen Beiträgen abgeben. Bilder, Links und Videos können ebenfalls zu Beiträgen hinzugefügt werden.
+To install MiniGreX CMS, follow these steps:
 
-## Technologie
-Das MiniGreX CMS wurde mit PHP, PostgreSQL und HTML/CSS erstellt. Die Frontend-Oberfläche wurde mit dem Bootstrap-Framework gestaltet.
+Download or clone the repository from Github.
+Create a database for MiniGreX CMS in MySQL, MariaDB, or Postgres.
+Import the SQL file minigrex_cms.sql into your database.
+Update the config.php file with your database credentials.
+Upload the files to your server.
+Navigate to the index.php file to view the CMS.
 
-### Autor
-MiniGreX CMS wurde von Volkan Sah entwickelt.
+## Features
+- User authentication
+- Admin panel for managing the site information and user accounts
+- Ability to share links, images, and videos
+- Comment system
+- Prepared statements to prevent SQL injection attacks
+- Supports MySQL, MariaDB, and Postgres
+- Admin Panel
+- The admin panel allows the admin to manage the site information and user accounts. It includes the following features:
 
-Lizenz
-Dieses Projekt steht unter der MIT-Lizenz. Weitere Informationen finden Sie in der Datei LICENSE.
+- Change the site title and description
+- Change the admin password
+- View a list of all users and delete user accounts
+## Credits
+MiniGreX CMS was created by Volkan `sah` Kücükbudak
+
+## License
+MiniGreX CMS is licensed under the MIT License. Feel free to use it for personal or commercial use.
+
+We hope this helps! If you have any questions or need further assistance, feel free to ask.
