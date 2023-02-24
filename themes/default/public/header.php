@@ -19,4 +19,4 @@ $html = "<!DOCTYPE html>
   <title>" . htmlspecialchars($site_info['title'], ENT_QUOTES) . "</title>
   <meta name='description' content='" . htmlspecialchars($site_info['description'], ENT_QUOTES) . "'>
 </head>
-<body>
+<body>";
