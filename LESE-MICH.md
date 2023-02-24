@@ -30,4 +30,4 @@ MiniGreX-CMS wurde mit Sicherheit im Hinterkopf entwickelt. Die Anwendung verwen
 Wenn Sie Fragen oder Probleme mit MiniGreX-CMS haben, erstellen Sie bitte ein Issue auf GitHub oder wenden Sie sich an den Entwickler.
 
 ### Lizenz
-MiniGreX-CMS ist unter der MIT-Lizenz veröffentlicht. Sie können den Quellcode frei verwenden, ändern und weitergeben, solange Sie die Urheberrechts- und Lizenzinformationen beibehalten. Siehe die LICENSE-Datei für weitere Informationen.
+MiniGreX-CMS ist unter der MIT-Lizenz von **Volkan Kücükbudak** veröffentlicht. Sie können den Quellcode frei verwenden, ändern und weitergeben, solange Sie die Urheberrechts- und Lizenzinformationen beibehalten. Siehe die LICENSE-Datei für weitere Informationen.
