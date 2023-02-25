@@ -3,15 +3,15 @@
 require_once "init.php";
 
 // Verbindung zur Datenbank herstellen
-//function get_connection() {
- // $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
- // if ($conn->connect_error) {
-   // die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
- // }
- // return $conn;
-//}
+function get_connection() {
+ $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+ if ($conn->connect_error) {
+  die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
+ }
+ return $conn;
+}
 
-// Benutzer hinzufügen
+// Ad user
 function add_user($username, $password) {
   $hash = password_hash($password, PASSWORD_DEFAULT);
   $conn = get_connection();
@@ -22,7 +22,7 @@ function add_user($username, $password) {
   $conn->close();
 }
 
-// Benutzer aktualisieren
+// update user
 function update_user($id, $username, $password) {
   $hash = password_hash($password, PASSWORD_DEFAULT);
   $conn = get_connection();
@@ -33,7 +33,7 @@ function update_user($id, $username, $password) {
   $conn->close();
 }
 
-// Benutzer löschen
+// delete user
 function delete_user($id) {
   $conn = get_connection();
   $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
@@ -43,7 +43,7 @@ function delete_user($id) {
   $conn->close();
 }
 
-// Benutzer nach ID abrufen
+// call user by id
 function get_user($id) {
   $conn = get_connection();
   $stmt = $conn->prepare("SELECT * FROM users WHERE id = ?");
@@ -56,7 +56,7 @@ function get_user($id) {
   return $user;
 }
 
-// Alle Benutzer abrufen
+// call all users
 function get_users() {
   $conn = get_connection();
   $stmt = $conn->prepare("SELECT * FROM users");
@@ -71,7 +71,7 @@ function get_users() {
   return $users;
 }
 
-// Admin-ID abrufen
+// call Admin-ID
 function get_admin_id() {
   if (!isset($_SESSION['admin_id'])) {
     return 0;
@@ -79,12 +79,12 @@ function get_admin_id() {
   return intval($_SESSION['admin_id']);
 }
 
-// Admin überprüfen
+// check admin
 function is_admin() {
   return get_admin_id() > 0;
 }
 
-// Admin einloggen
+// Admin login
 function login_admin($username, $password) {
   $conn = get_connection();
   $stmt = $conn->prepare("SELECT id, password FROM admins WHERE username = ?");
@@ -101,7 +101,7 @@ function login_admin($username, $password) {
   return false;
 }
 
-// Admin ausloggen
+// Admin logout
 
 function logout_admin() {
   unset($_SESSION['admin_id']);
