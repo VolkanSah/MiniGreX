@@ -57,12 +57,6 @@ $site_info = $result->fetch_assoc();
 
 // HTML-Kopf in Variable schreiben
 $html = <<<HTML
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Administration</title>
-</head>
-<body>
   <h1>Administration</h1>
   <form method='post'>
     <h2>Seitentitel und Meta-Informationen</h2>
@@ -85,12 +79,6 @@ $html = <<<HTML
     <input type='submit' value='Ändern'>
   </form>
     </form>
-</body>
-</html>
-HTML;
-
-// HTML-Fuß in Variable schreiben
-$html .= <<<HTML
 </body>
 </html>
 HTML;
