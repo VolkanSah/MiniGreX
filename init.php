@@ -50,7 +50,7 @@ try {
 // Define constants for DB tables
 define("USERS_TABLE", "users");
 define("POSTS_TABLE", "posts");
-define("SITES_TABLE", "sites");
+define("SITES_TABLE", "sites");  // not developed !
 define("COMMENTS_TABLE", "comments");
 // if exist define
 define("IMAGE_DB_TABLE", "imagedbs"); // not developed !
