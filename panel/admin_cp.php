@@ -1,5 +1,9 @@
 <?php
-
+// check if is admin
+if (!is_admin()) {
+  header('Location: index.php');
+  exit();
+}
 // load init.php
 require_once "init.php";
 
@@ -11,11 +15,7 @@ if ($conn->connect_error) {
  die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
 }
 
-// check if is admin
-if (!is_admin()) {
-  header('Location: index.php');
-  exit();
-}
+
 
 // Check befor sending formular
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
