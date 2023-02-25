@@ -10,10 +10,9 @@
  * @subpackage Wis_Business_Directory/public/template
  */
 // load required files
-require_once "config.php";
-require_once "functions.php";
-require_once "plugins/plugin-loader.php";
-require_once "includes/upload.php";
+require_once "../config.php";
+require_once "../functions.php";
+require_once "../plugins/plugin-loader.php";
 // get database connection
 $conn = get_connection();
 // Load sitetitel and Meta-informationen
