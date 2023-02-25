@@ -1,24 +1,23 @@
 <?php
 
-// Erforderliche Dateien einbinden
-require_once "config.php";
-require_once "functions.php";
+// load init.php
+require_once "init.php";
 
 // Verbindung zur Datenbank herstellen
-$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+//$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
 // Verbindung prüfen
-if ($conn->connect_error) {
-  die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
-}
+//if ($conn->connect_error) {
+ // die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
+//}
 
-// Admin überprüfen
+// check if is admin
 if (!is_admin()) {
   header('Location: index.php');
   exit();
 }
 
-// Formularabschicken überprüfen
+// Check befor sending formular
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Seitentitel und Meta-Informationen speichern
   if (isset($_POST['title']) && isset($_POST['description'])) {
@@ -27,9 +26,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $conn->prepare("UPDATE site_info SET title = ?, description = ?");
     $stmt->bind_param("ss", $title, $description);
     $stmt->execute();
+    
+    // weiter funktionen
   }
 
-  // Admin-Passwort ändern
+  // Change Admin-Password
   if (isset($_POST['old_password']) && isset($_POST['new_password'])) {
     $old_password = mysqli_real_escape_string($conn, $_POST['old_password']);
     $new_password = mysqli_real_escape_string($conn, $_POST['new_password']);
