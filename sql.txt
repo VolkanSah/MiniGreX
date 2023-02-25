@@ -11,7 +11,7 @@ CREATE TABLE mgx_post (
   FOREIGN KEY (mgx_user_id) REFERENCES mgx_user(id)
 );
 
-CREATE TABLE kommentar (
+CREATE TABLE comments (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
   mgx_post_id INTEGER NOT NULL,
   text VARCHAR(255) NOT NULL,
