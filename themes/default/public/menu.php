@@ -1,8 +1,7 @@
 <?php
-/* MiniGreX 1.0 menu.php */
-// load required files
-require_once "config.php";
-require_once "functions.php";
+/* MiniGreX 1.0 /themes/default/public/menu.php */
+// load init.php
+require_once "init.php";
 // get database connection
 $conn = get_connection();
 // Load some stuff
