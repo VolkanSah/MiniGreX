@@ -3,11 +3,10 @@
  * This is the loop file, so it is more simple to edit it or call 
  * This file is used to markup the loop aspects of the MiniGreX.
  *
- * @link       https://github.com/VolkanSah/MiniGreX-CMS/blob/main/includes/loop.php
+ * @link       includes/loop.php
  * @since      1.0.0
  *
- * @package    MiniGreX 1.0 Loop
- * @subpackage Wis_Business_Directory/public/template
+ * @package    core
  */
 // load init.php
 require_once "init.php";
