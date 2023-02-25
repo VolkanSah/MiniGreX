@@ -6,8 +6,9 @@
 </form>
 -->
 
-
 <?php
+// load init.php
+require_once "init.php";
 
 // Get reference to uploaded image
 $image_file = $_FILES["image"];
