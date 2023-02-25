@@ -9,10 +9,8 @@
  * @package    MiniGreX 1.0 Loop
  * @subpackage Wis_Business_Directory/public/template
  */
-// load required files
-require_once "../config.php";
-require_once "../functions.php";
-require_once "../plugins/plugin-loader.php";
+// load init.php
+require_once "init.php";
 // get database connection
 $conn = get_connection();
 // Load sitetitel and Meta-informationen
