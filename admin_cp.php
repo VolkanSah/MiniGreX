@@ -49,29 +49,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 }
 
-// Seitentitel und Meta-Informationen laden
+// load Titel und Meta-Informationen 
 $stmt = $conn->prepare("SELECT title, description FROM site_info");
 $stmt->execute();
 $result = $stmt->get_result();
 $site_info = $result->fetch_assoc();
 
-// HTML-Kopf in Variable schreiben
+// HTML-in Variable
 $html = <<<HTML
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Administration</title>
-</head>
-<body>
+
   <h1>Administration</h1>
   <form method='post'>
-    <h2>Seitentitel und Meta-Informationen</h2>
-    <label for='title'>Seitentitel:</label>
+  
+    <h2>Titel and Meta-Informationen</h2>
+    <label for='title'>Sitetitel:</label>
     <input type='text' id='title' name='title' value='{$site_info['title']}'>
     <br>
-    <label for='description'>Meta-Beschreibung:</label>
+    <label for='description'>Meta-Description:</label>
     <input type='text' id='description' name='description' value='{$site_info['description']}'>
     <br>
+    
+     
+    
+    
+    
+    
+    
+    
     <input type='submit' value='Speichern'>
   </form>
   <form method='post'>
@@ -89,11 +93,6 @@ $html = <<<HTML
 </html>
 HTML;
 
-// HTML-Fuß in Variable schreiben
-$html .= <<<HTML
-</body>
-</html>
-HTML;
 
 // HTML-Output ausgeben
 print($html);
