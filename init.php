@@ -7,7 +7,7 @@ DE: Die Zugangsdaten zur Datenbank werden hier als Konstanten definiert, um zu v
 Außerdem werden die session.cookie_httponly und session.cookie_secure Einstellungen gesetzt, um Cookies sicherer zu machen.
 Zuletzt wird überprüft, ob die Seite über HTTPS aufgerufen wird, und gegebenenfalls eine Umleitung auf HTTPS durchgeführt. **/
 
-// Datenbank-Zugangsdaten
+// Please setup your database informations
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'your_db_name');
 define('DB_USER', 'your_db_user');
@@ -16,9 +16,10 @@ define('DB_PASS', 'your_secret_pass');
 // Session name
 define('SESSION_NAME', 'your_name_of_session');
 
-// Cookies sicherer machen
+// Cookie security
 ini_set('session.cookie_httponly', 1);
 ini_set('session.cookie_secure', 1);
+
 // Debug uncoment to show debug-console in admin-area
 //define('DEBUG_CONSOLE', 'true');
 
@@ -59,7 +60,6 @@ define("POSTS_TABLE", "imagedbs"); // not developed !
 //define("POSTS_TABLE", "seo_managers");
 //define("POSTS_TABLE", "profile_managerr");
 //define("POSTS_TABLE", "security_manager");
-
 
 // Prepare statements for commonly used queries
 // User prepared statements
