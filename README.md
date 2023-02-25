@@ -1,10 +1,5 @@
 # MiniGreX CMS (Beta) still developing
 
-```
-git status
-git add
-git commit
-```
 
 ## Introduction
 MiniGreX CMS is a lightweight and secure content management system that allows users to share links, images, videos, and comments. The system is designed to be easy to use and to work on different database systems like MySQL, MariaDB, and Postgres.
@@ -13,7 +8,7 @@ This CMS is built with PHP and uses prepared statements to prevent SQL injection
 
 
 
-
+```
 ## Installation
 To install MiniGreX CMS, follow these steps:
 - install Webserver with Apache or Nginx
@@ -25,7 +20,7 @@ To install MiniGreX CMS, follow these steps:
 - Update the config.php file with your database credentials.
 - Upload the files to your server.
 - Navigate to the index.php file to view the CMS.
-
+```
 ## Features
 - User authentication
 - Admin panel for managing the site information and user accounts
