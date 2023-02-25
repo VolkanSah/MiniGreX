@@ -46,3 +46,4 @@ $stmt_insert_post = $pdo->prepare("INSERT INTO " . POSTS_TABLE . " (title, conte
 
 $stmt_select_comments_by_post_id = $pdo->prepare("SELECT * FROM " . COMMENTS_TABLE . " WHERE post_id = :post_id");
 $stmt_insert_comment = $pdo->prepare("INSERT INTO " . COMMENTS_TABLE . " (post_id, author_name, content) VALUES (:post_id, :author_name, :content)");
+
