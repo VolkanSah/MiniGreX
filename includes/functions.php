@@ -1,13 +1,15 @@
 <?php
+// load init.php
+require_once "init.php";
 
 // Verbindung zur Datenbank herstellen
-function get_connection() {
-  $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-  if ($conn->connect_error) {
-    die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
-  }
-  return $conn;
-}
+//function get_connection() {
+ // $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+ // if ($conn->connect_error) {
+   // die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
+ // }
+ // return $conn;
+//}
 
 // Benutzer hinzufügen
 function add_user($username, $password) {
@@ -112,3 +114,5 @@ function is_admin() {
     return false;
   }
 }
+// close connection to database
+$conn->close();
