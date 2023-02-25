@@ -1,11 +1,12 @@
 # MiniGreX CMS (Beta) still developing
-[- Documentation for this project](documentation/)
 
 
 ## Introduction
 MiniGreX CMS is a lightweight and secure content management system that allows users to share links, images, videos, and comments. The system is designed to be easy to use and to work on different database systems like MySQL, MariaDB, and Postgres.
 
 This CMS is built with PHP and uses prepared statements to prevent SQL injection attacks. The code has been optimized for performance, making it a fast and efficient way to manage content.
+[- Documentation for this project](documentation/)
+
 
 
 
