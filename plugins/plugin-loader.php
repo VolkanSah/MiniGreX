@@ -1,11 +1,25 @@
 <?php
 /* 
-MiniGreX 1.0
+MiniGreX 1.0 Plugin Loader with stmt & pod
 */
+<?php
 
-// load required files
-require_once "config.php";
-require_once "functions.php";
+// load init.php
+require_once "init.php";
+
+// load your plugin_core here
+require_once "role_manager/core.php";
+require_once "auto_cache/core.php";
+require_once "gateway_manager/core.php";
+require_once "get_local_settings/core.php";
+require_once "image_db/core.php";
+require_once "profile_manager/core.php";
+require_once "seo_manager/core.php";
+require_once "video_db/core.php";
+require_once "role_manager/core.php";
+require_once "role_manager/core.php";
+
+
 
 // get database connection
 $conn = get_connection();
