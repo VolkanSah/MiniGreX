@@ -1,5 +1,4 @@
-<?php
-/**
+<?php /**
  * This is the loop file, so it is more simple to edit it or call 
  * This file is used to markup the loop aspects of the MiniGreX.
  *
