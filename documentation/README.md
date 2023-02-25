@@ -1,1 +1,1 @@
-
+# Documentation of MiniGreX CMS
