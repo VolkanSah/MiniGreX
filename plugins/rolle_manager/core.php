@@ -1,3 +1,2 @@
 <?php
-
-// load init.php
+// /plugins/rolle_manager/core.php
