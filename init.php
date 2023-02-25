@@ -48,17 +48,17 @@ try {
 }
 
 // Define constants for DB tables
-define("USERS_TABLE", "users");
-define("POSTS_TABLE", "posts");
+define("USERS_TABLE", "users"); // developed !
+define("POSTS_TABLE", "posts"); // developed !
 define("SITES_TABLE", "sites");  // not developed !
-define("COMMENTS_TABLE", "comments");
+define("COMMENTS_TABLE", "comments"); // developed !
 // if exist define
-define("IMAGE_DB_TABLE", "imagedbs"); // not developed !
-//define("POSTS_TABLE", "videodbs");
-//define("POSTS_TABLE", "role_managers");
-//define("POSTS_TABLE", "seo_managers");
-//define("POSTS_TABLE", "profile_managerr");
-//define("POSTS_TABLE", "security_manager");
+define("IMAGE_TABLE", "imagedbs"); // not developed !
+//define("VIDEO_TABLE", "videodbs");
+//define("ROLE_TABLE", "role_managers");
+//define("SEO_TABLE", "seo_managers");
+//define("PROFILE_TABLE", "profile_managerr");
+//define("SECURITY_TABLE", "security_manager");
 
 // Prepare statements for commonly used queries
 // User prepared statements
@@ -77,7 +77,7 @@ $stmt_select_all_sites = $pdo->prepare("SELECT * FROM " . SITES_TABLE);
 $stmt_select_sites_by_id = $pdo->prepare("SELECT * FROM " . SITES_TABLE . " WHERE id = :id");
 $stmt_insert_sites = $pdo->prepare("INSERT INTO " . SITES_TABLE . " (title, content, author_id, category) VALUES (:title, :content, :author_id, :category)");
 // DEMO Dummy for optional Plugins like image_db (image Database & Hosting)
-$stmt_select_all_image_dbs = $pdo->prepare("SELECT * FROM " . IMAGE_DB_TABLE);
-$stmt_select_image_dbs_by_id = $pdo->prepare("SELECT * FROM " . IMAGE_DB_TABLE . " WHERE id = :id");
-$stmt_insert_image_dbs = $pdo->prepare("INSERT INTO " . IMAGE_DB_TABLE . " (title, content, link, author_id, category) VALUES (:title, :content, :link, :author_id, :category)");
+$stmt_select_all_image_dbs = $pdo->prepare("SELECT * FROM " . IMAGE_TABLE);
+$stmt_select_image_dbs_by_id = $pdo->prepare("SELECT * FROM " . IMAGE_TABLE . " WHERE id = :id");
+$stmt_insert_image_dbs = $pdo->prepare("INSERT INTO " . IMAGE_TABLE . " (title, content, link, author_id, category) VALUES (:title, :content, :link, :author_id, :category)");
 
