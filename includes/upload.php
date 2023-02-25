@@ -41,7 +41,7 @@ move_uploaded_file(
     $image_file["tmp_name"],
 
     // New image location
-    __DIR__ . "/images/" . $image_name
+    __DIR__ . "./uploads/images/" . $image_name
 );
 
 // Redirect back to the page where the form was submitted from
