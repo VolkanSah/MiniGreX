@@ -2,8 +2,6 @@
 /* 
 MiniGreX 1.0 Plugin Loader with stmt & pod
 */
-<?php
-
 // load init.php
 require_once "init.php";
 
