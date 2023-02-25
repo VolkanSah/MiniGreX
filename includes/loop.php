@@ -15,9 +15,10 @@ require_once "init.php";
 $conn = get_connection();
 // Load sitetitel and Meta-informationen
 $site_info = get_site_info($conn);
-// Alle Beiträge aus der Datenbank laden
+// Start Loop
+// load all pots from database
 $posts = get_all_posts($conn);
-// Alle Beiträge anzeigen
+// show all posts
 foreach ($posts as $post) {
   $comments = get_comments_for_post($conn, $post['id']);
   $username = get_username($conn, $post['benutzer_id']);
@@ -32,14 +33,11 @@ foreach ($posts as $post) {
       <label for='text'>Comment:</label>
       <input type='text' id='text' name='text'>
       <br>
-      <input type='submit' value='Absenden'>
+      <input type='submit' value='Submit'>
     </form>";
   }
 }
-
-// HTML-Fuß in Variable schreiben
-$html .= "</body>
-</html>";
+// end loop
 
 // HTML-Output ausgeben
 print($html);
