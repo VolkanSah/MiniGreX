@@ -35,6 +35,8 @@ foreach ($posts as $post) {
     </form>";
   }
 }
+
+// to doo loop  pagination comments and posts, set minmaximum for both not finished
 // end loop
 
 // HTML-Output ausgeben
