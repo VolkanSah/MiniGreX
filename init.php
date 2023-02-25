@@ -27,7 +27,7 @@ define("POSTS_TABLE", "sites");
 define("COMMENTS_TABLE", "comments");
 
 // if exist define
-//define("POSTS_TABLE", "imagedbs");
+define("POSTS_TABLE", "imagedbs"); // not developed !
 //define("POSTS_TABLE", "videodbs");
 //define("POSTS_TABLE", "role_managers");
 //define("POSTS_TABLE", "seo_managers");
