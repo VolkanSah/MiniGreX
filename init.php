@@ -1,13 +1,39 @@
 <?php
-/*
-EN: In this code, we use PDO and prepared statements to ensure that all SQL queries are secure. We also define some constants
+/** EN: The access data for the database is defined here as constants to prevent them from being accidentally overwritten.
+In addition, the session.cookie_httponly and session.cookie_secure settings are set to make cookies more secure.
+Finally, it is checked whether the page is being accessed via HTTPS and, if necessary, a redirection to HTTPS is performed.
+
+DE: Die Zugangsdaten zur Datenbank werden hier als Konstanten definiert, um zu verhindern, dass sie aus Versehen überschrieben werden. 
+Außerdem werden die session.cookie_httponly und session.cookie_secure Einstellungen gesetzt, um Cookies sicherer zu machen.
+Zuletzt wird überprüft, ob die Seite über HTTPS aufgerufen wird, und gegebenenfalls eine Umleitung auf HTTPS durchgeführt. **/
+
+// Datenbank-Zugangsdaten
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'your_db_name');
+define('DB_USER', 'your_db_user');
+define('DB_PASS', 'your_secret_pass');
+
+// Session name
+define('SESSION_NAME', 'your_name_of_session');
+
+// Cookies sicherer machen
+ini_set('session.cookie_httponly', 1);
+ini_set('session.cookie_secure', 1);
+// Debug uncoment to show debug-console in admin-area
+//define('DEBUG_CONSOLE', 'true');
+
+// SSL erzwingen
+if ($_SERVER['HTTPS'] !== 'on') {
+    header("Location: https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+    exit();
+}
+/* EN: In this code, we use PDO and prepared statements to ensure that all SQL queries are secure. We also define some constants
 for the names of our database tables and prepare commonly used queries to optimize the code and simplify maintenance.
 DE: In diesem Code verwenden wir PDO und Prepared Statements, um sicherzustellen, dass alle SQL-Abfragen sicher sind. 
 Wir definieren auch einige Konstanten für die Namen unserer Datenbanktabellen und bereiten häufig verwendete Abfragen
 vor, um den Code zu optimieren und die Wartung zu vereinfachen.*/
 
 // Load required files
-require_once "includes/config.php"; // chmod 444?
 require_once "includes/functions.php"; // general core functions
 require_once "plugins/plugin-loader.php"; // plugin init (intigration of plugins)
 require_once "includes/security.php"; // security core-  security plugins must use plugin_loader for init plugins
