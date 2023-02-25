@@ -1,5 +1,5 @@
 # MiniGreX CMS (Beta) still developing
-[Contribution guidelines for this project](docs/CONTRIBUTING.md)
+[guidelines for this project](documentation/)
 
 
 ## Introduction
