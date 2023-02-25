@@ -39,8 +39,8 @@ foreach ($posts as $post) {
 // to doo loop  pagination comments and posts, set minmaximum for both not finished
 // end loop
 
-// HTML-Output ausgeben
+// HTML-Output
 print($html);
 
-// Verbindung zur Datenbank schließen
+// disable connection to database
 $conn->close();
