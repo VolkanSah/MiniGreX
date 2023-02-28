@@ -8,7 +8,7 @@ define('DB_NAME', 'your_db_name');
 define('DB_USER', 'your_db_user');
 define('DB_PASS', 'your_secret_pass');
 
-// Session name
+// Session name - please setup your_name_of_session'
 define('SESSION_NAME', 'your_name_of_session');
 
 // Cookie security
@@ -51,7 +51,6 @@ define("VIDEO_TABLE", "videodbs"); // not developed !
 //define("SEO_TABLE", "seo_managers"); // not developed !
 //define("PROFILE_TABLE", "profile_managerr"); // not developed !
 //define("SECURITY_TABLE", "security_manager"); // not developed !
-
 // --------------------------------------   Prepare statements for commonly used queries  --------------------------------------------  //
 // User prepared statements
 $stmt_select_all_users = $pdo->prepare("SELECT * FROM " . USERS_TABLE);
