@@ -1,7 +1,6 @@
 <?php
-// Erforderliche Dateien einbinden
-require_once "config.php";
-require_once "functions.php";
+// load init.php
+require_once "init.php";
 
 // Verbindung zur Datenbank herstellen
 $conn = get_connection();
