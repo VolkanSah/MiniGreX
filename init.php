@@ -1,11 +1,6 @@
-<?php
-/** EN: The access data for the database is defined here as constants to prevent them from being accidentally overwritten.
+<?php /** EN: The access data for the database is defined here as constants to prevent them from being accidentally overwritten.
 In addition, the session.cookie_httponly and session.cookie_secure settings are set to make cookies more secure.
-Finally, it is checked whether the page is being accessed via HTTPS and, if necessary, a redirection to HTTPS is performed.
-
-DE: Die Zugangsdaten zur Datenbank werden hier als Konstanten definiert, um zu verhindern, dass sie aus Versehen überschrieben werden. 
-Außerdem werden die session.cookie_httponly und session.cookie_secure Einstellungen gesetzt, um Cookies sicherer zu machen.
-Zuletzt wird überprüft, ob die Seite über HTTPS aufgerufen wird, und gegebenenfalls eine Umleitung auf HTTPS durchgeführt. **/
+Finally, it is checked whether the page is being accessed via HTTPS and, if necessary, a redirection to HTTPS is performed. */
 
 // Please setup your database informations
 define('DB_HOST', 'localhost');
@@ -23,16 +18,13 @@ ini_set('session.cookie_secure', 1);
 // Debug uncoment to show debug-console in admin-area
 //define('DEBUG_CONSOLE', 'true');
 
-// SSL erzwingen
+// force SSL set to off for disable ssl force ! WARNING its not an good idea !
 if ($_SERVER['HTTPS'] !== 'on') {
     header("Location: https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
     exit();
 }
 /* EN: In this code, we use PDO and prepared statements to ensure that all SQL queries are secure. We also define some constants
-for the names of our database tables and prepare commonly used queries to optimize the code and simplify maintenance.
-DE: In diesem Code verwenden wir PDO und Prepared Statements, um sicherzustellen, dass alle SQL-Abfragen sicher sind. 
-Wir definieren auch einige Konstanten für die Namen unserer Datenbanktabellen und bereiten häufig verwendete Abfragen
-vor, um den Code zu optimieren und die Wartung zu vereinfachen.*/
+for the names of our database tables and prepare commonly used queries to optimize the code and simplify maintenance. */
 
 // Load required files
 require_once "includes/functions.php"; // general core functions
@@ -60,7 +52,7 @@ define("VIDEO_TABLE", "videodbs"); // not developed !
 //define("PROFILE_TABLE", "profile_managerr"); // not developed !
 //define("SECURITY_TABLE", "security_manager"); // not developed !
 
-// Prepare statements for commonly used queries
+// --------------------------------------   Prepare statements for commonly used queries  --------------------------------------------  //
 // User prepared statements
 $stmt_select_all_users = $pdo->prepare("SELECT * FROM " . USERS_TABLE);
 $stmt_select_user_by_id = $pdo->prepare("SELECT * FROM " . USERS_TABLE . " WHERE id = :id");
