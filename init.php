@@ -48,36 +48,40 @@ try {
 }
 
 // Define constants for DB tables
-define("USERS_TABLE", "users"); // developed !
-define("POSTS_TABLE", "posts"); // developed !
+define("USERS_TABLE", "users"); // developed !?
+define("POSTS_TABLE", "posts"); // developed !?
 define("SITES_TABLE", "sites");  // not developed !
-define("COMMENTS_TABLE", "comments"); // developed !
-// if exist define
+define("COMMENTS_TABLE", "comments"); // developed !?
+// if exist define und uncoment
 define("IMAGE_TABLE", "imagedbs"); // not developed !
-//define("VIDEO_TABLE", "videodbs");
-//define("ROLE_TABLE", "role_managers");
-//define("SEO_TABLE", "seo_managers");
-//define("PROFILE_TABLE", "profile_managerr");
-//define("SECURITY_TABLE", "security_manager");
+define("VIDEO_TABLE", "videodbs"); // not developed !
+//define("ROLE_TABLE", "role_managers"); // not developed !
+//define("SEO_TABLE", "seo_managers"); // not developed !
+//define("PROFILE_TABLE", "profile_managerr"); // not developed !
+//define("SECURITY_TABLE", "security_manager"); // not developed !
 
 // Prepare statements for commonly used queries
 // User prepared statements
 $stmt_select_all_users = $pdo->prepare("SELECT * FROM " . USERS_TABLE);
 $stmt_select_user_by_id = $pdo->prepare("SELECT * FROM " . USERS_TABLE . " WHERE id = :id");
 $stmt_insert_user = $pdo->prepare("INSERT INTO " . USERS_TABLE . " (username, password, email) VALUES (:username, :password, :email)");
-// Posts prepared statements
+// Posts with category prepared statements
 $stmt_select_all_posts = $pdo->prepare("SELECT * FROM " . POSTS_TABLE);
 $stmt_select_post_by_id = $pdo->prepare("SELECT * FROM " . POSTS_TABLE . " WHERE id = :id");
 $stmt_insert_post = $pdo->prepare("INSERT INTO " . POSTS_TABLE . " (title, content, author_id, category) VALUES (:title, :content, :author_id, :category)");
 // Comments prepared statements
 $stmt_select_comments_by_post_id = $pdo->prepare("SELECT * FROM " . COMMENTS_TABLE . " WHERE post_id = :post_id");
 $stmt_insert_comment = $pdo->prepare("INSERT INTO " . COMMENTS_TABLE . " (post_id, author_name, content) VALUES (:post_id, :author_name, :content)");
-// Sites with category and  prepared statements
+// Sites with category prepared statements
 $stmt_select_all_sites = $pdo->prepare("SELECT * FROM " . SITES_TABLE);
 $stmt_select_sites_by_id = $pdo->prepare("SELECT * FROM " . SITES_TABLE . " WHERE id = :id");
 $stmt_insert_sites = $pdo->prepare("INSERT INTO " . SITES_TABLE . " (title, content, author_id, category) VALUES (:title, :content, :author_id, :category)");
-// DEMO Dummy for optional Plugins like image_db (image Database & Hosting)
+// image_db prepared statements
 $stmt_select_all_image_dbs = $pdo->prepare("SELECT * FROM " . IMAGE_TABLE);
 $stmt_select_image_dbs_by_id = $pdo->prepare("SELECT * FROM " . IMAGE_TABLE . " WHERE id = :id");
 $stmt_insert_image_dbs = $pdo->prepare("INSERT INTO " . IMAGE_TABLE . " (title, content, link, author_id, category) VALUES (:title, :content, :link, :author_id, :category)");
+// image_db prepared statements
+$stmt_select_all_video_dbs = $pdo->prepare("SELECT * FROM " . VIDEO_TABLE);
+$stmt_select_video_dbs_by_id = $pdo->prepare("SELECT * FROM " . VIDEO_TABLE . " WHERE id = :id");
+$stmt_insert_video_dbs = $pdo->prepare("INSERT INTO " . VIDEO_TABLE . " (title, content, link, author_id, category) VALUES (:title, :content, :link, :author_id, :category)");
 
