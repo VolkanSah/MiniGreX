@@ -1,7 +1,6 @@
 <?php
 // load init.php
 require_once "init.php";
-
 // Verbindung zur Datenbank herstellen
 $conn = get_connection();
 
