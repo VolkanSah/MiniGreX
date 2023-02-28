@@ -20,14 +20,24 @@ function get_connection() {
 
 // Get reference to uploaded image
 $image_file = $_FILES["image"];
+// Get reference to uploaded video
+$video_file = $_FILES["video"];
 
 // Exit if no file uploaded
 if (!isset($image_file)) {
     die('No file uploaded.');
 }
+// Exit if no file uploaded
+if (!isset($video_file)) {
+    die('No file uploaded.');
+}
 
 // Exit if image file is zero bytes
 if (filesize($image_file["tmp_name"]) <= 0) {
+    die('Uploaded file has no contents.');
+}
+// Exit if image file is zero bytes
+if (filesize($video_file["tmp_name"]) <= 0) {
     die('Uploaded file has no contents.');
 }
 
@@ -36,12 +46,20 @@ $image_type = exif_imagetype($image_file["tmp_name"]);
 if (!$image_type) {
     die('Uploaded file is not an image.');
 }
+// Exit if is not a valid image file
+$video_type = exif_videotype($video_file["tmp_name"]);
+if (!$image_type) {
+    die('Uploaded file is not an video.');
+}
 
 // Get file extension based on file type, to prepend a dot we pass true as the second parameter
 $image_extension = image_type_to_extension($image_type, true);
+$video_extension = video_type_to_extension($video_type, true);
 
-// Create a unique image name
+// Create a unique name
 $image_name = bin2hex(random_bytes(16)) . $image_extension;
+$video_name = bin2hex(random_bytes(16)) . $video_extension;
+
 
 // Move the temp image file to the images directory
 move_uploaded_file(
@@ -49,7 +67,15 @@ move_uploaded_file(
     $image_file["tmp_name"],
 
     // New image location
-    __DIR__ . "./uploads/images/" . $image_name
+    __DIR__ . "./uploads/image/" . $image_name
+);
+// Move the temp video file to the images directory
+move_uploaded_file(
+    // Temp image location
+    $video_file["tmp_name"],
+
+    // New image location
+    __DIR__ . "./uploads/video/" . $image_name
 );
 
 // Redirect back to the page where the form was submitted from
