@@ -1,23 +1,18 @@
 <?php
-// check if is admin
-if (!is_admin()) {
-  header('Location: index.php');
-  exit();
-}
-
 // load init.php
 require_once "init.php";
-
 // Verbindung zur Datenbank herstellen
-$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
-// Verbindung prüfen
-if ($conn->connect_error) {
-    die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
+function get_connection() {
+ $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+ if ($conn->connect_error) {
+  die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
+ }
+ return $conn;
 }
 
 // Benutzer-ID aus der URL holen
 $benutzer_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+
 
 // HTML-Kopf in Variable schreiben
 $html = "<!DOCTYPE html>
