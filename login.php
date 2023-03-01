@@ -6,10 +6,14 @@ if (is_logged_in()) {
 }
 // load init.php
 require_once "init.php";
-
 // Verbindung zur Datenbank herstellen
-$conn = get_connection();
-
+function get_connection() {
+ $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+ if ($conn->connect_error) {
+  die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
+ }
+ return $conn;
+}
 // check formular sending
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $username = mysqli_real_escape_string($conn, $_POST['username']);
