@@ -1,16 +1,6 @@
 <?php
 /*  MiniGreX 1.0 Plugin Loader with stmt & pod not finished !*/
-// load init.php
-require_once "init.php";
 
-// Verbindung zur Datenbank herstellen
-function get_connection() {
- $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
- if ($conn->connect_error) {
-  die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
- }
- return $conn;
-}
 
 // load your plugin_core here for init
 require_once "role_manager/core.php";
