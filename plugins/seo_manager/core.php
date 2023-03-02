@@ -1,6 +1,4 @@
 <?php
-// load init.php
-require_once "init.php";
 // Construct Metabox
 
 
