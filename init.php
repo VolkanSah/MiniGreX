@@ -51,7 +51,7 @@ define("VIDEO_TABLE", "videodbs"); // not developed !
 //define("SEO_TABLE", "seo_managers"); // not developed !
 //define("PROFILE_TABLE", "profile_managerr"); // not developed !
 //define("SECURITY_TABLE", "security_manager"); // not developed !
-// --------------------------------------   Prepare statements for commonly used queries  --------------------------------------------  //
+//   Prepare statements for commonly used queries 
 // User prepared statements
 $stmt_select_all_users = $pdo->prepare("SELECT * FROM " . USERS_TABLE);
 $stmt_select_user_by_id = $pdo->prepare("SELECT * FROM " . USERS_TABLE . " WHERE id = :id");
