@@ -1,4 +1,4 @@
-# MiniGreX CMS (Beta) still developing it will not work yet! Want help me?
+# MiniGreX CMS (Delta) still developing it will not work yet! Want help me?
 
 
 ## Introduction
