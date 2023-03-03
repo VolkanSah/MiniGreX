@@ -1,2 +1,2 @@
 # Themes folder
-- nothing to say yet
+- use theme loader for theme init
