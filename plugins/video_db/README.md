@@ -1,1 +1,1 @@
-# Video DB or Hosting
+# Video DB or Hosting plugin
