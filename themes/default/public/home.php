@@ -10,6 +10,7 @@ $html = "<div class="row g-5">";
 $html = "<div class="col-md-6">";
 $html = "<h2>Starter projects</h2>";
 // start loop here
+$html = "<p>to do loop last 1</p>";
 
 
  // ??? loop not finished
