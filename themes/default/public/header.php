@@ -1,11 +1,4 @@
 <?php
-/* MiniGreX 1.0 /themes/default/public/header.php */
-// load init.php
-require_once "init.php";
-// get database connection
-$conn = get_connection();
-// Load sitetitel and Meta-informationen
-$site_info = get_site_info($conn);
 // HTML-header in variable 
 $html = "<!DOCTYPE html>";
 $html = "<html lang="en">";
@@ -29,5 +22,3 @@ $html = "  </a>";
 $html = "  </header>";
 // HTML-Output 
 print($html);
-// close connection
-$conn->close();
