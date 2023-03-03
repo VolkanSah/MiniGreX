@@ -1,15 +1,5 @@
 <?php
-/* MiniGreX 1.0 /themes/default/public/home.php */
-// load init.php
-require_once "init.php";
-// get database connection
-$conn = get_connection();
-// Load some stuff
-$site_info = get_site_info($conn);
-// site infos usedin this file
-// title, hero, homelink_title
-$posts = get_all_posts($conn);
-// HTML- in variable 
+
 // Hero Conatiner- in admin settings
 $html = "<main>;
 $html = "<h1>" . htmlspecialchars($site_info['title'], ENT_QUOTES) . "</h1>"; 
@@ -51,6 +41,4 @@ $html = "</main>";
   // HTML-Output 
 print($html);
 
-// close databse connection
-$conn->close();
 
