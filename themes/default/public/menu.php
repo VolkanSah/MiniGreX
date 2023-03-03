@@ -1,12 +1,6 @@
 <?php
-/* MiniGreX 1.0 /themes/default/public/menu.php */
-// load init.php
-require_once "init.php";
-// get database connection
-$conn = get_connection();
-// Load some stuff
-$site_info = get_site_info($conn);
-// HTML in variable
+
+// menu in variable
 $html = "<nav class="navbar navbar-expand-lg navbar-light bg-light">";
 $html = "<div class="container-fluid">";
 $html = "<a class="navbar-brand" href="#">MiniGreX-CMS</a>";
@@ -34,5 +28,3 @@ $html = "</nav>";
 // HTML-Output 
 print($html);
 // close databse connection
-$conn->close();
-// end
