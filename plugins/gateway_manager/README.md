@@ -1,4 +1,4 @@
-# Secure Gateways (Optional)
+# Secure Gateways (Optional) - not developed
 - security pull
 - security ceck
 - check before redirect
