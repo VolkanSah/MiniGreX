@@ -1,6 +1,6 @@
 <?php
 // load init.php
-require_once "init.php";
+require_once "includes/init.php";
 
 // Verbindung zur Datenbank herstellen
 function get_connection() {
