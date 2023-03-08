@@ -1,26 +1,26 @@
-CREATE TABLE mgx_user (
+CREATE TABLE user (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
   username VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE mgx_post (
+CREATE TABLE post (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
-  mgx_user_id INTEGER NOT NULL,
+  user_id INTEGER NOT NULL,
   link VARCHAR(255) NOT NULL,
-  FOREIGN KEY (mgx_user_id) REFERENCES mgx_user(id)
+  FOREIGN KEY (user_id) REFERENCES user(id)
 );
 
 CREATE TABLE comments (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
-  mgx_post_id INTEGER NOT NULL,
+  post_id INTEGER NOT NULL,
   text VARCHAR(255) NOT NULL,
-  FOREIGN KEY (mgx_post_id) REFERENCES mgx_post(id)
+  FOREIGN KEY (mgx_post_id) REFERENCES post(id)
 );
 
-CREATE TABLE mgx_options (
+CREATE TABLE options (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
-  mgx_user_id INTEGER NOT NULL,
-  link VARCHAR(255) NOT NULL,
-  FOREIGN KEY (mgx_user_id) REFERENCES mgx_user(id)
+  user_id INTEGER NOT NULL,
+  text VARCHAR(255) NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES user(id)
 );
