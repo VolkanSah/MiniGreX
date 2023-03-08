@@ -1,5 +1,5 @@
 
-<!--
+<!-- form tu use for upload .php
 <form action="upload.php" method="POST" enctype="multipart/form-data">
     <input type="file" name="image" accept="image/*" />
     <button type="submit">Upload</button>
