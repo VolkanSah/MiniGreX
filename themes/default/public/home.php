@@ -1,4 +1,5 @@
 <?php
+include 'header.php';
 
 // Hero Conatiner- in admin settings
 $html = "<main>;
@@ -36,6 +37,7 @@ $html = "</ul>";
 $html = "</div>";
 $html = "</div>";
 $html = "</main>";
+include 'footer.php';
   
   
   
