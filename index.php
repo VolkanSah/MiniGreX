@@ -10,3 +10,5 @@ try {
 }
 // Load template
 require_once "/themes/theme_loader.php"; // general core functions
+// Verbindung zur Datenbank schließen
+$conn->close();
