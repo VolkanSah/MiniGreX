@@ -28,8 +28,8 @@ for the names of our database tables and prepare commonly used queries to optimi
 
 // Load required files
 require_once "includes/functions.php"; // general core functions
-require_once "plugins/plugin-loader.php"; // plugin init (intigration of plugins)
-require_once "includes/security.php"; // security core-  security plugins must use plugin_loader for init plugins
+//require_once "plugins/plugin-loader.php"; // plugin init (intigration of plugins)
+//require_once "includes/security.php"; // security core-  security plugins must use plugin_loader for init plugins
 
 // Set up PDO connection
 try {
@@ -45,8 +45,8 @@ define("POSTS_TABLE", "posts"); // developed !?
 define("SITES_TABLE", "sites");  // not developed !
 define("COMMENTS_TABLE", "comments"); // developed !?
 // if exist define und uncoment
-define("IMAGE_TABLE", "imagedbs"); // not developed !
-define("VIDEO_TABLE", "videodbs"); // not developed !
+//define("IMAGE_TABLE", "imagedbs"); // not developed !
+//define("VIDEO_TABLE", "videodbs"); // not developed !
 //define("ROLE_TABLE", "role_managers"); // not developed !
 //define("SEO_TABLE", "seo_managers"); // not developed !
 //define("PROFILE_TABLE", "profile_managerr"); // not developed !
@@ -68,11 +68,12 @@ $stmt_select_all_sites = $pdo->prepare("SELECT * FROM " . SITES_TABLE);
 $stmt_select_sites_by_id = $pdo->prepare("SELECT * FROM " . SITES_TABLE . " WHERE id = :id");
 $stmt_insert_sites = $pdo->prepare("INSERT INTO " . SITES_TABLE . " (title, content, author_id, category) VALUES (:title, :content, :author_id, :category)");
 // image_db prepared statements
-$stmt_select_all_image_dbs = $pdo->prepare("SELECT * FROM " . IMAGE_TABLE);
+/*$stmt_select_all_image_dbs = $pdo->prepare("SELECT * FROM " . IMAGE_TABLE);
 $stmt_select_image_dbs_by_id = $pdo->prepare("SELECT * FROM " . IMAGE_TABLE . " WHERE id = :id");
 $stmt_insert_image_dbs = $pdo->prepare("INSERT INTO " . IMAGE_TABLE . " (title, content, link, author_id, category) VALUES (:title, :content, :link, :author_id, :category)");
+*/
 // video_db prepared statements
-$stmt_select_all_video_dbs = $pdo->prepare("SELECT * FROM " . VIDEO_TABLE);
+/* $stmt_select_all_video_dbs = $pdo->prepare("SELECT * FROM " . VIDEO_TABLE);
 $stmt_select_video_dbs_by_id = $pdo->prepare("SELECT * FROM " . VIDEO_TABLE . " WHERE id = :id");
 $stmt_insert_video_dbs = $pdo->prepare("INSERT INTO " . VIDEO_TABLE . " (title, content, link, author_id, category) VALUES (:title, :content, :link, :author_id, :category)");
-
+*/
