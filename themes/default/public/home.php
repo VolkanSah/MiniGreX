@@ -37,11 +37,9 @@ $html = "</ul>";
 $html = "</div>";
 $html = "</div>";
 $html = "</main>";
-include 'footer.php';
-  
-  
-  
-  // HTML-Output 
+// HTML-Output 
 print($html);
+include 'footer.php';
+
 
 
