@@ -1,7 +1,4 @@
 <?php
-include 'header.php';
-include 'menu.php';
-
 // Hero Conatiner- in admin settings
 $html = "<main>;
 $html = "<h1>" . htmlspecialchars($site_info['title'], ENT_QUOTES) . "</h1>"; 
@@ -40,7 +37,6 @@ $html = "</div>";
 $html = "</main>";
 // HTML-Output 
 print($html);
-include 'footer.php';
 
 
 
