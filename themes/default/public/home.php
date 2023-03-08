@@ -1,5 +1,6 @@
 <?php
 include 'header.php';
+include 'menu.php';
 
 // Hero Conatiner- in admin settings
 $html = "<main>;
