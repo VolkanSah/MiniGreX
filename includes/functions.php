@@ -114,5 +114,4 @@ function is_admin() {
     return false;
   }
 }
-// close connection to database
-$conn->close();
+
