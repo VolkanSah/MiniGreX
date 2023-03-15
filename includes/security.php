@@ -39,13 +39,12 @@ function validate_input($input, $type) {
 }
 
 // Funktion zum Überprüfen von Berechtigungen
-function check_permission($permission) {
+function check_permission($user_id, $permission) {
     global $pdo;
-    $user_id = $_SESSION['user_id'];
 
     $stmt = $pdo->prepare("SELECT COUNT(*) FROM permissions WHERE user_id = :user_id AND permission = :permission");
-    $stmt->bindParam(':user_id', $user_id);
-    $stmt->bindParam(':permission', $permission);
+    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $stmt->bindParam(':permission', $permission, PDO::PARAM_STR);
     $stmt->execute();
     $result = $stmt->fetchColumn();
 
