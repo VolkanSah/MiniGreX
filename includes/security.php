@@ -1,13 +1,7 @@
 <?php
 
-// "init.php"-Datei einbeziehen
+// Inkludieren der "init.php"-Datei für die Datenbankverbindung und andere wichtige Funktionen
 require_once("init.php");
-
-// Datenbankabfrage ausführen
-$stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
-$stmt->bindParam(':username', $username);
-$stmt->execute();
-$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Funktion zum Hashen von Passwörtern mit bcrypt
 function hash_password($password) {
