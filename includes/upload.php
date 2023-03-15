@@ -1,5 +1,5 @@
 <?php
-/*
+/* comment: file ready!
 In this usage of the upload function, the upload_type is passed as a POST variable and then used to set the upload path and determine the allowed file types. 
 The files are then saved in the appropriate folder and saved in the database
 */
