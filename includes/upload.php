@@ -9,14 +9,6 @@
 <?php
 // load init.php
 require_once "init.php";
-// get database connection
-function get_connection() {
- $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
- if ($conn->connect_error) {
-  die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
- }
- return $conn;
-}
 
 // Get reference to uploaded image
 $image_file = $_FILES["image"];
