@@ -1,9 +1,12 @@
-<?php
-
-// Inkludieren der "init.php"-Datei für die Datenbankverbindung und andere wichtige Funktionen
+<?php 
+/* Security Options for MiniGreX CMS
+This file is used externaly to get a better overview for the security of the cms
+Customs-Plugins must interact with security.php before they can call init.php
+*/
+// include der "init.php"
 require_once("init.php");
 
-// Funktion zum Hashen von Passwörtern mit bcrypt
+// Hashen passwwords with bcrypt
 function hash_password($password) {
     $options = [
         'cost' => 12,
@@ -11,13 +14,13 @@ function hash_password($password) {
     return password_hash($password, PASSWORD_BCRYPT, $options);
 }
 
-// Funktion zum Escapen von Zeichenfolgen für sichere SQL-Abfragen
+// Escapen strings for secure SQL-query
 function escape_string($string) {
     global $pdo;
     return $pdo->quote($string);
 }
 
-// Funktion zum Überprüfen von Benutzereingaben
+// Validate user-input
 function validate_input($input, $type) {
     switch ($type) {
         case 'email':
@@ -32,7 +35,7 @@ function validate_input($input, $type) {
     }
 }
 
-// Funktion zum Überprüfen von Berechtigungen
+// check user permissions
 function check_permission($user_id, $permission) {
     global $pdo;
 
