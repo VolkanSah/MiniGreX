@@ -1,13 +1,13 @@
 <?php
-// load init.php
-require_once "init.php";
-// Datenbankverbindung herstellen
-try {
-    $pdo = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASSWORD);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Database connection failed: " . $e->getMessage());
-}
+
+// "init.php"-Datei einbeziehen
+require_once("init.php");
+
+// Datenbankabfrage ausführen
+$stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
+$stmt->bindParam(':username', $username);
+$stmt->execute();
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Funktion zum Hashen von Passwörtern mit bcrypt
 function hash_password($password) {
