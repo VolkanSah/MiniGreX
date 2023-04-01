@@ -1,5 +1,4 @@
-includes folder, only for core files and upload.php
-
+includes folder, only for core files
 # Ready ?
 - loop?  99,0 % ready
 - upload? 99,0 % ready
