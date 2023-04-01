@@ -18,7 +18,10 @@ function hash_password($password) {
 // Escapen strings for secure SQL-query
 function escape_string($string) {
     global $pdo;
-    return $pdo->quote($string);
+    $stmt = $pdo->prepare("SELECT :string");
+    $stmt->bindParam(':string', $string, PDO::PARAM_STR);
+    $stmt->execute();
+    return $stmt->fetchColumn();
 }
 
 // Validate user-input
