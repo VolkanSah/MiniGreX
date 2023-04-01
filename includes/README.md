@@ -4,4 +4,4 @@ includes folder, only for core files
 - upload? 99,0 % ready
 - functions 100% work but not all functions present
 - img optimizer - missing
-- security (keep dev)
+- security (keep dev) needed https://github.com/VolkanSah/ModSecurity-Webserver-Protection-repository
