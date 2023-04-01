@@ -1,4 +1,5 @@
 <?PHP
+// in progress 3/4 ready
 // include der "init.php"
 require_once("init.php");
 // Location and prefix for cache files
