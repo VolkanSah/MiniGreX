@@ -76,7 +76,7 @@ As an admin, you can also access the admin panel by clicking on the "Admin" link
 ## Credits
 MiniGreX CMS was created by Volkan Kücükbudak
 
-##Contributing
+## Contributing
 If you want to contribute to this plugin, please create a new branch and submit a pull request. We welcome all contributions, including bug fixes, feature requests, and translations.
 
 ## License
