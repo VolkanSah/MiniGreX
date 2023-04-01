@@ -5,3 +5,15 @@ includes folder, only for core files
 - functions 100% work but not all functions present
 - img optimizer - missing
 - security (keep dev) 
+
+
+not: for me:  do not forget : 
+
+    // Escapen strings for secure SQL-query
+    function escape_string($string) {
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT :string");
+    $stmt->bindParam(':string', $string, PDO::PARAM_STR);
+    $stmt->execute();
+    return $stmt->fetchColumn();
+    }
