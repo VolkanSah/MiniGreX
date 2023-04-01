@@ -1,5 +1,5 @@
 # SEO Advanced plugin (Optional)
 - Meta advanced (Social etc)
 - tools
-- statistiks etc
+- stats/metrics
 - not more yet
