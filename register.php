@@ -72,6 +72,3 @@ HTML;
 $html .= "</body>
 </html>";
 print($html);
-
-// Verbindung zur Datenbank schließen
-$conn->close();
