@@ -15,7 +15,7 @@ This CMS is built with PHP and uses prepared statements to prevent SQL injection
 ## Installation
 To install MiniGreX CMS, follow these steps:
 - install Webserver with Apache or Nginx
-- install PHP 7.0 or higher
+- install PHP 7.4 or higher
 - install MySQL, PostgreSQL or MariaDB 
 - Download or clone the repository from Github.
 - Create a database for MiniGreX CMS in MySQL, MariaDB, or Postgres.
