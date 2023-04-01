@@ -1,16 +1,6 @@
 <?php
 // load init.php
-require_once "init.php";
-
-// Verbindung zur Datenbank herstellen
-function get_connection() {
- $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
- if ($conn->connect_error) {
-  die("Verbindung zur Datenbank fehlgeschlagen: " . $conn->connect_error);
- }
- return $conn;
-}
-
+require_once "./includes/init.php";
 // Check befor sending formular
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Seitentitel und Meta-Informationen speichern
