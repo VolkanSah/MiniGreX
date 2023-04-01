@@ -7,7 +7,7 @@ Customs-Plugins must interact with security.php before they can call init.php
 // include der "init.php"
 require_once("init.php");
 
-// Hashen passwwords with bcrypt
+// Hashen passwwords with bcrypt - change 12 to 14 or 15 to get more secure hashes but less performance
 function hash_password($password) {
     $options = [
         'cost' => 12,
