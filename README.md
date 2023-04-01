@@ -24,18 +24,25 @@ To install MiniGreX CMS, follow these steps:
 - Navigate to the index.php file to view the CMS.
 
 ## Features
-- User authentication
-- Admin panel for managing the site information and user accounts
-- Ability to share links, images, and videos
-- Comment system
-- Prepared statements to prevent SQL injection attacks
-- Supports MySQL, MariaDB, and Postgres
-- Admin Panel
-- The admin panel allows the admin to manage the site information and user accounts. It includes the following features:
+- User authentication (ready)
+- Admin panel for managing the site information and user accounts (ready)
+- Ability to share links, images, and videos (only post, links ready)
+- Comment system (ready)
+- Prepared statements to prevent SQL injection attacks (check)
+- Supports MySQL, MariaDB, and Postgres (check)
+- Admin Panel (Bootstrap starter? )
+- Lazyload  + Image Customizer 
+- Image & Video Database
+- SEO Tools
+- Gateway Tools
+- Rolle manager
+- and some other stuff
 
-- Change the site title and description
-- Change the admin password
-- View a list of all users and delete user accounts
+The admin panel allows the admin to manage the site information and user accounts. It includes the following features:
+
+- Change the site title and description (ready)
+- Change the admin/User password (ready)
+- View a list of all users and delete user accounts (Pagination needed)
 
 ## Usage
 Once you have installed MiniGreX-CMS, you can start using it to share links, images, and videos. The main page shows all the posts that have been shared, along with any comments that have been added. To add a new post, simply click on the "Add Post" button and fill in the form.
