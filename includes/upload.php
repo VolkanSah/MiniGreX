@@ -21,7 +21,7 @@ if (!is_uploaded_file($_FILES['file']['tmp_name'])) {
     die("File could not be processed");
 }
 
-// Check if the uploaded file is too large
+// Check if the uploaded file is too large default 100 MB
 if ($_FILES['file']['size'] > 100000000) {
     die("File is too large");
 }
