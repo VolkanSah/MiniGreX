@@ -1,4 +1,5 @@
 # MiniGreX CMS (Delta) still developing it will not work yet! Want help me?
+This is a remaster/rework from a older project from me, now we will use pdo & stmt!
 
 
 ## Introduction
@@ -37,6 +38,7 @@ To install MiniGreX CMS, follow these steps:
 - Gateway Tools
 - Rolle manager
 - and some other stuff
+- deep mode (for devOps+)
 
 The admin panel allows the admin to manage the site information and user accounts. It includes the following features:
 
