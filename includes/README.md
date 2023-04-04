@@ -7,7 +7,7 @@ includes folder, only for core files
 - security (keep dev) 
 
 
-not: for me:  do not forget : 
+note: for me:  do not forget : 
 
     // Escapen strings for secure SQL-query
     function escape_string($string) {
