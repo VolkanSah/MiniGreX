@@ -3,7 +3,7 @@ MiniGreX-CMS has been designed with security in mind, and the code has been writ
 
 - [Deutsch](de/README.md)
 - English
-- Turkish
+- Türkce
 
 
 
