@@ -52,7 +52,7 @@ To install MiniGreX CMS, follow these steps:
 - SEO Tools
 - Gateway Tools
 - Role Manager
-- Deep mode (for DevOps+)
+- Deep Web mode (for DevOps+)
 
 
 ## The admin panel 
