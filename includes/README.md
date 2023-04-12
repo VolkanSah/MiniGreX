@@ -17,3 +17,5 @@ note: for me:  do not forget : (check)
     $stmt->execute();
     return $stmt->fetchColumn();
     }
+    
+init miss dec. init.php
