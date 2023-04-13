@@ -27,7 +27,7 @@ require_once "default/public/footer.php"; // load footer.php
 // load css
    
 if( is_default_css() {
-require_once "default/public/css/default.css"; // load css
+require_once "default/css/default.css"; // load css
   
   // do somework with it ! soon
   
@@ -37,7 +37,7 @@ require_once "default/public/css/default.css"; // load css
    // load css
    
 if( is_default_js() {
-require_once "default/public/js/default.js"; // load js
+require_once "default/js/default.js"; // load js
   
   // do somework with it ! soon
   
