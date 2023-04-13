@@ -27,6 +27,7 @@ if ($_SERVER['HTTPS'] !== 'on') {
 for the names of our database tables and prepare commonly used queries to optimize the code and simplify maintenance. */
 
 // Load required files
+// do not forget dom_load wait!
 require_once "functions.php"; // general core functions
 require_once "../plugins/plugin-loader.php"; // plugin init (intigration of plugins) // future init over security.php
 require_once "security.php"; // security core-  security plugins must use plugin_loader for init plugins
