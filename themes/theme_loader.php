@@ -31,7 +31,7 @@ if( is_default_css() {
 require_once "default/css/default.css"; // load css
   
   // do somework with it ! soon
-  
+  // fontO /bootstrap />load local >check
   // print!
 }
    
@@ -41,6 +41,8 @@ if( is_default_js() {
 require_once "default/js/default.js"; // load js
   
   // do somework with it ! soon
+     // fontO /bootstrap />load local >check
+
   
   // print!
 }
