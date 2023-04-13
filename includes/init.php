@@ -47,8 +47,8 @@ define("POSTS_TABLE", "posts"); // developed !?
 define("SITES_TABLE", "sites");  // not developed !
 define("COMMENTS_TABLE", "comments"); // developed !?
 // if exist define und uncoment
-define("IMAGE_TABLE", "imagedbs"); // not developed !
-define("VIDEO_TABLE", "videodbs"); // not developed !
+//define("IMAGE_TABLE", "imagedbs"); // not developed !
+//define("VIDEO_TABLE", "videodbs"); // not developed !
 //define("ROLE_TABLE", "role_managers"); // not developed !
 //define("SEO_TABLE", "seo_managers"); // not developed !
 //define("PROFILE_TABLE", "profile_managerr"); // not developed !
