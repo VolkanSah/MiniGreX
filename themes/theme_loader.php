@@ -1,5 +1,6 @@
 <?php
 // Load template if its home
+// careful! not finished... only for remember!
 if( is_front_page() {
 require_once "default/public/header.php"; // load header.php
 require_once "default/public/menu.php"; // load menu.php
