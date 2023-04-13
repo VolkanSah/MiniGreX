@@ -7,6 +7,7 @@ require_once "default/public/menu.php"; // load menu.php
 require_once "default/public/home.php"; // load menu.php
 require_once "default/public/footer.php"; // load footer.php
 }
+   // else > error!
 // Load template if its post
 if( is_post_page() {
 require_once "default/public/header.php"; // load header.php
@@ -25,7 +26,7 @@ require_once "default/public/footer.php"; // load footer.php
 }
    
 // load css
-   
+     // else > error!
 if( is_default_css() {
 require_once "default/css/default.css"; // load css
   
