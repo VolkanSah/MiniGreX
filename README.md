@@ -55,16 +55,21 @@ To install MiniGreX CMS, follow these steps:
 - Deep Web mode (for DevOps+)
 
 
-## The admin panel 
-allows the admin to manage the site information and user accounts. It includes the following features:
+## The admin (panel)
+allows the admin to manage the site information and user accounts e.g. It includes the following features:
 
 - Change the site title and description (ready)
 - Change the admin/User password (ready)
 - View a list of all users and delete user accounts (Pagination needed)
 
-## The user panel 
+
+## The user (panel )
 - Change the User password 
 - create post, links, coments, upload images, videos
+
+# Public files
+- login.php + stmt (ready)
+- register.php + stmt (ready)
 
 ## Usage
 Once you have installed MiniGreX-CMS, you can start using it to share links, images, and videos. The main page shows all the posts that have been shared, along with any comments that have been added. To add a new post, simply click on the "Add Post" button and fill in the form.
