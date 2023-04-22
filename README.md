@@ -67,7 +67,7 @@ allows the admin to manage the site information and user accounts e.g. It includ
 - Change the User password 
 - create post, links, coments, upload images, videos
 
-# Public files
+## Public files> functions
 - login.php + stmt (ready)
 - register.php + stmt (ready)
 
