@@ -2,20 +2,6 @@
 # an index.php weiter und ermöglicht es, saubere URLs wie "example.com/post-titel" zu verwenden.
 # Die zweite Regel verbietet den Zugriff auf Dateien, die mit einem Punkt beginnen, um zu verhindern, 
 # dass sensible Konfigurationsdateien durch Direktzugriff offengelegt werden.
-# Error docs
-ErrorDocument 400 /errors/400.html
-ErrorDocument 401 /errors/401.html
-ErrorDocument 402 /errors/402.html
-ErrorDocument 403 /errors/403.html
-ErrorDocument 404 /errors/404.html
-ErrorDocument 405 /errors/404.html
-ErrorDocument 406 /errors/406.html
-ErrorDocument 407 /errors/407.html
-ErrorDocument 408 /errors/408.html
-ErrorDocument 409 /errors/409.html
-ErrorDocument 415 /errors/415.html
-
-
 RewriteEngine On
 # Leite Anfragen an index.php weiter, wenn keine Datei oder kein Verzeichnis gefunden wird
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -43,4 +29,24 @@ RewriteRule ^(.*)$ index.php/$1 [L]
  AddOutputFilterByType DEFLATE application/x-javascript
  AddOutputFilterByType DEFLATE application/x-shockwave-flash
 </IfModule>
+# end deflate
+# Error docs
+ErrorDocument 400 /errors/400.html
+ErrorDocument 401 /errors/401.html
+ErrorDocument 402 /errors/402.html
+ErrorDocument 403 /errors/403.html
+ErrorDocument 404 /errors/404.html
+ErrorDocument 405 /errors/404.html
+ErrorDocument 406 /errors/406.html
+ErrorDocument 407 /errors/407.html
+ErrorDocument 408 /errors/408.html
+ErrorDocument 409 /errors/409.html
+ErrorDocument 415 /errors/415.html
+ErrorDocument 500 /errors/500.html
+ErrorDocument 501 /errors/501.html
+ErrorDocument 502 /errors/502.html
+ErrorDocument 503 /errors/503.html
+ErrorDocument 504 /errors/504.html
+ErrorDocument 505 /errors/505.html
+# end Error docs
 
