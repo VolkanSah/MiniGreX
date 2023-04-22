@@ -31,22 +31,22 @@ RewriteRule ^(.*)$ index.php/$1 [L]
 </IfModule>
 # end deflate
 # Error docs
-ErrorDocument 400 /errors/400.html
-ErrorDocument 401 /errors/401.html
-ErrorDocument 402 /errors/402.html
-ErrorDocument 403 /errors/403.html
-ErrorDocument 404 /errors/404.html
-ErrorDocument 405 /errors/404.html
-ErrorDocument 406 /errors/406.html
-ErrorDocument 407 /errors/407.html
-ErrorDocument 408 /errors/408.html
-ErrorDocument 409 /errors/409.html
-ErrorDocument 415 /errors/415.html
-ErrorDocument 500 /errors/500.html
-ErrorDocument 501 /errors/501.html
-ErrorDocument 502 /errors/502.html
-ErrorDocument 503 /errors/503.html
-ErrorDocument 504 /errors/504.html
-ErrorDocument 505 /errors/505.html
+ErrorDocument 400 /error/400.html
+ErrorDocument 401 /error/401.html
+ErrorDocument 402 /error/402.html
+ErrorDocument 403 /error/403.html
+ErrorDocument 404 /error/404.html
+ErrorDocument 405 /error/404.html
+ErrorDocument 406 /error/406.html
+ErrorDocument 407 /error/407.html
+ErrorDocument 408 /error/408.html
+ErrorDocument 409 /error/409.html
+ErrorDocument 415 /error/415.html
+ErrorDocument 500 /error/500.html
+ErrorDocument 501 /error/501.html
+ErrorDocument 502 /error/502.html
+ErrorDocument 503 /error/503.html
+ErrorDocument 504 /error/504.html
+ErrorDocument 505 /error/505.html
 # end Error docs
 
