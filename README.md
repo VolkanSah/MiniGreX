@@ -78,13 +78,16 @@ To add a comment to a post, you need to be logged in. Click on the "Log in" link
 
 As an admin, you can also access the admin panel by clicking on the "Admin" link at the top of the page. From here, you can change the site title and description, as well as change the admin password.
 
-## Credits
+## Copyright
 MiniGreX CMS was created by Volkan Kücükbudak , still yet ;)
+- [VolkanSah on Github](https://github.com/volkansah)
+- [Developer Site](https://volkansah.github.io)
+- [Become a 'Sponsor'](https://github.com/sponsors/volkansah)
 
 ## Contributing
 If you want to contribute to this plugin, please create a new branch and submit a pull request. We welcome all contributions, including bug fixes, feature requests, and translations.
 
 ## License
-MiniGreX CMS is licensed under the MIT License. Feel free to use it for personal or commercial use.
+MiniGreX CMS is licensed under the MIT [LICENSE](LICENSE) . Feel free to use it for personal or commercial use.
 
 
