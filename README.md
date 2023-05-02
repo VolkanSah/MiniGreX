@@ -1,6 +1,6 @@
 # MiniGreX CMS (Delta)
 
-*still developing, it will not work yet! Want to help me?* smallest high secure multi-cms ;)
+*still developing, it will not work yet! Want to help me?* smallest high secure multi-cms for DevOps & Hidden World
 
 ## Table of Contents
 - [Security](#security)
