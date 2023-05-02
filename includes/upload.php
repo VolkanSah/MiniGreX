@@ -46,9 +46,9 @@ if (!in_array($extension, $allowed_types)) {
 
 // Set the folder path depending on the type of upload
 if ($_POST['upload_type'] == 'image') {
-    $upload_path = $upload_dir . 'image/';
+    $upload_path = $cache_dir . 'uploads/image/';
 } elseif ($_POST['upload_type'] == 'video') {
-    $upload_path = $upload_dir . 'video/';
+    $upload_path = $cache_dir . 'uploads/video/';
 } else {
     die("Invalid upload type");
 }
