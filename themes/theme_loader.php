@@ -1,5 +1,5 @@
 <?php
-// NOW FINISHED! So we can call what we need where we need
+// NOT FINISHED! So we can call what we need where we need
 // Location and prefix for Theme-files
 define('TEMPLATE_PATH', "default");
 define('TEMPLATE_CSS_PATH', TEMPLATE_PATH . "css");
