@@ -27,7 +27,7 @@ if ($_FILES['file']['size'] > 100000000) {
 }
 
 // Directory for uploads
-$upload_dir = "uploads/";
+$upload_dir = "cache/uploads/";
 
 // Function to generate a secure filename
 function generate_safe_filename($file_name) {
@@ -46,9 +46,9 @@ if (!in_array($extension, $allowed_types)) {
 
 // Set the folder path depending on the type of upload
 if ($_POST['upload_type'] == 'image') {
-    $upload_path = $cache_dir . 'uploads/image/';
+    $upload_path = $upload_dir . 'image/';
 } elseif ($_POST['upload_type'] == 'video') {
-    $upload_path = $cache_dir . 'uploads/video/';
+    $upload_path = $upload_dir . '/video/';
 } else {
     die("Invalid upload type");
 }
