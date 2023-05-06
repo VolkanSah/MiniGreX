@@ -87,7 +87,13 @@ MiniGreX CMS was created by Volkan Kücükbudak , still yet ;)
 ## Contributing
 If you want to contribute to this plugin, please create a new branch and submit a pull request. We welcome all contributions, including bug fixes, feature requests, and translations.
 
-## License
+### Thank you for your support!
+- If you appreciate my work, please consider [becoming a 'Sponsor'](https://github.com/sponsors/volkansah), giving a :star: to my projects, or following me. 
+### Credits
+- [VolkanSah on Github](https://github.com/volkansah)
+- [Developer Site](https://volkansah.github.io)
+
+### License
 MiniGreX CMS is licensed under the MIT [LICENSE](LICENSE) . Feel free to use it for personal or commercial use.
 
 
