@@ -119,7 +119,7 @@ $html = "
   <ul>";
 // Alle Benutzer anzeigen
 foreach ($benutzer as $user) {
-$html .= "<li>" . htmlspecialchars($user['username']) . " <a href='benutzerverwaltung.php?id=" . $user['id'] . "'>Bearbeiten</a></li>";
+$html .= "<li>" . htmlspecialchars($user['username']) . " <a href='user_settings.php?id=" . $user['id'] . "'>Bearbeiten</a></li>";
 }
 
 
