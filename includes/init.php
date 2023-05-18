@@ -47,10 +47,10 @@ try {
 }
 
 // Define constants for DB tables
-define("USERS_TABLE", "users"); // developed !?
-define("POSTS_TABLE", "posts"); // developed !?
+define("USERS_TABLE", "users"); // developed !
+define("POSTS_TABLE", "posts"); // developed !
 define("SITES_TABLE", "sites");  // not developed !
-define("COMMENTS_TABLE", "comments"); // developed !?
+define("COMMENTS_TABLE", "comments"); // developed !
 // if exist define und uncoment
 //define("IMAGE_TABLE", "imagedbs"); // not developed !
 //define("VIDEO_TABLE", "videodbs"); // not developed !
