@@ -28,10 +28,18 @@ for the names of our database tables and prepare commonly used queries to optimi
 
 // Load required files
 // do not forget dom_load wait!
-require_once "functions.php"; // general core functions
+
+define('INIT_MGREX', "init.php");
+define('SECURITY_MGREX', "security.php");
+define('LOOP_MGREX', "loop.php");
+define('FUNCTION_MGREX', "functions.php");
+define('UPLOAD_MGREX', "upload.php");
+define('IMAGES_MGREX', "images.php");
+
+
+
 require_once "../plugins/plugin-loader.php"; // plugin init (intigration of plugins) // future init over security.php
-require_once "security.php"; // security core-  security plugins must use plugin_loader for init plugins
-require_once "upload.php";
+
 
 // Set up PDO connection
 try {
