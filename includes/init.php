@@ -24,7 +24,6 @@ if ($_SERVER['HTTPS'] !== 'on') {
     exit();
 }
 
-
 // Define core files
 define('INIT_MGREX', "init.php");
 define('SECURITY_MGREX', "security.php");
