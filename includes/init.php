@@ -1,13 +1,21 @@
-<?php /** EN: The access data for the database is defined here as constants to prevent them from being accidentally overwritten.
+<?php 
+// file: root/inculdes/init.php
+/** The access data for the database is defined here as constants to prevent them from being accidentally overwritten.
 In addition, the session.cookie_httponly and session.cookie_secure settings are set to make cookies more secure.
 Finally, it is checked whether the page is being accessed via HTTPS and, if necessary, a redirection to HTTPS is performed. */
+// folder structur
+// - cache
+// - themes
+// - plugins
+// - inculdes
+// - panel
+// - _logs
 
 // Please setup your database informations
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'your_db_name');
 define('DB_USER', 'your_db_user');
 define('DB_PASS', 'your_secret_pass');
-
 // Session name - please setup your_name_of_session'
 define('SESSION_NAME', 'your_name_of_session');
 
