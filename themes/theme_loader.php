@@ -1,5 +1,5 @@
 <?php
-// NOT FINISHED! So we can call what we need where we need
+// Define Theme files
 // Location and prefix for Theme-files
 define('TEMPLATE_PATH', "default");
 define('TEMPLATE_CSS_PATH', TEMPLATE_PATH . "css");
@@ -14,7 +14,7 @@ define('TEMPLATE_SITE', TEMPLATE_PATH . "public/site.php");
 define('TEMPLATE_SITE_SIDEBAR', TEMPLATE_PATH . "public/sidebar_site.php");
 define('TEMPLATE_CSS', TEMPLATE_CSS_PATH . "default.css");
 define('TEMPLATE_JS', TEMPLATE_JS_PATH . "default.js");
-// load your own stufffor themes
+// end theme_loader
 
    
 
