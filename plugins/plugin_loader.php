@@ -4,7 +4,7 @@
 // needed! DOM_load wait
 // needed! check_errors_ >if>else>stop!
 // load your plugin_core here for init
-
+// Define your plugins
 define('PLUGIN_PATH', "plugins/");
 define('ROLE_MANAGER', PLUGIN_PATH . "role_manager/core.php");
 define('GATEWAY_MANAGER', PLUGIN_PATH . "gateway_manager/core.php");
