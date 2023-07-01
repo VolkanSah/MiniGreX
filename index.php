@@ -1,9 +1,18 @@
-<?php //not dev! wait i think!
-// load init.php no!all in init.php
-//require_once "includes/security.php";
-//require_once "plugins/plugin_loader.php";
-//require_once "themes/theme_loader.php";
-//require_once "includes/upload.php";
+<?php // source https://github.com/VolkanSah/MiniGreX-CMS/
+// content management system
+//  .-.   .-..-..-. .-..-. .---. .----. .----..-.  .-.
+//  |  `.'  || ||  `| || |/   __}| {}  }| {_   \ \/ / 
+//  | |\ /| || || |\  || |\  {_ }| .-. \| {__  / /\ \ 
+//  `-' ` `-'`-'`-' `-'`-' `---' `-' `-'`----'`-'  `-'
+//  Copyright @S. Volkan Kücükbudak
 
+// Include the init file
+require_once 'includes/init.php';
 
-// thinking: request>ident>parse>recheck>get_request>fallback>log>testcon>test_Security>blacklist>whitelist>deepmode?>2ban_or_acc_work>fin
+// Initialize the CMS
+$cms = new CMS();
+
+// Start the user interface
+$cms->run();
+
+?>
