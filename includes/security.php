@@ -1,8 +1,8 @@
 <?php 
-/* Comment: file ready!
+/* Comment: file ready!? Not realy!
 Security Options for MiniGreX CMS
 This file is used externaly to get a better overview for the security of the cms
-Customs-Plugins must interact with security.php before they can call init.php
+Customs-Plugins must interact with security.php before they can call init
 */
 // include der "init.php"
 require_once INIT_MGREX;
