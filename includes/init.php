@@ -33,12 +33,12 @@ if ($_SERVER['HTTPS'] !== 'on') {
 }
 
 // Define core files
-define('INIT_MGREX', "init.php");
-define('SECURITY_MGREX', "security.php");
-define('LOOP_MGREX', "loop.php");
-define('FUNCTION_MGREX', "functions.php");
-define('UPLOAD_MGREX', "upload.php");
-define('IMAGES_MGREX', "images.php");
+// define('INIT_MGREX', "init.php");
+// define('SECURITY_MGREX', "security.php");
+// define('LOOP_MGREX', "loop.php");
+// define('FUNCTION_MGREX', "functions.php");
+// define('UPLOAD_MGREX', "upload.php");
+// define('IMAGES_MGREX', "images.php");
 
 // Load required files
 require_once "../plugins/plugin_loader.php"; // plugin init (intigration of plugins) // future init over security.php
