@@ -5,7 +5,7 @@ This file is used externaly to get a better overview for the security of the cms
 Customs-Plugins must interact with security.php before they can call init.php
 */
 // include der "init.php"
-require_once("init.php");
+require_once INIT_MGREX;
 
 // Hashen passwwords with bcrypt - 12-15 randoms ar ok
 function hash_password($password) {
