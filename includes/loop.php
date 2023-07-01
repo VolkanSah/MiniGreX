@@ -5,7 +5,7 @@ The code also creates pagination for the articles by counting the total number o
 */
 
 // include init.php
-require_once("init.php");
+require_once INIT_MGREX;
 
 // define the variable
 $category = isset($_GET['category']) ? $_GET['category'] : 'all';
