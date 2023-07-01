@@ -7,6 +7,12 @@ Customs-Plugins must interact with security.php before they can call init.php
 // include der "init.php"
 require_once INIT_MGREX;
 
+// Add security headers
+header("X-Frame-Options: DENY");
+header("X-Content-Type-Options: nosniff");
+header("X-XSS-Protection: 1; mode=block");
+header("Referrer-Policy: strict-origin");
+
 // Hashen passwwords with bcrypt - 12-15 randoms ar ok
 function hash_password($password) {
     $options = [
