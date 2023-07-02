@@ -7,7 +7,7 @@ includes folder, only for core files
 - security (keep dev) 
 
 
-note: for me:  do not forget : (check)
+note: for me: : (check)
 
     // Escapen strings for secure SQL-query
     function escape_string($string) {
@@ -17,5 +17,4 @@ note: for me:  do not forget : (check)
     $stmt->execute();
     return $stmt->fetchColumn();
     }
-    
-init miss dec. init.php
+
