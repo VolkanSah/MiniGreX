@@ -1,5 +1,7 @@
-
 <?php // optimize images
+
+// include init.php
+require_once INIT_MGREX;
 
 /*
 To do
