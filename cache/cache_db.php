@@ -4,7 +4,7 @@
 // miss image/video cache
 // ??
 // include der "init.php"
-require_once("init.php");
+require_once INIT_MGREX;
 // Location and prefix for cache files
 define('CACHE_PATH', "cache/");
 define('CACHE_PATH_POST', CACHE_PATH . "posts");
