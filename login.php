@@ -1,6 +1,6 @@
 <?php
 // load init.php
-require_once "includes/init.php";
+require_once INIT_MGREX;
 
 // Wenn bereits angemeldet, dann weiterleiten zur Index-Seite
 if (is_logged_in()) {
