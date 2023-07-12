@@ -1,6 +1,6 @@
 <?php
 // load init.php
-require_once "init.php";
+require_once INIT_MGREX;
 
 // Verbindung zur Datenbank herstellen
 function get_connection() {
