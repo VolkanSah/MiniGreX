@@ -1,6 +1,6 @@
 <?php
 // load init.php
-require_once "includes/init.php";
+require_once INIT_MGREX;
 // Formularabschicken überprüfen
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $username = $_POST['username'];
