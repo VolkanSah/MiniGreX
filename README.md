@@ -86,7 +86,7 @@ MiniGreX CMS was created by Volkan Kücükbudak , still yet ;)
 - [Become a 'Sponsor'](https://github.com/sponsors/volkansah)
 
 ## Contributing
-If you want to contribute to this plugin, please create a new branch and submit a pull request. We welcome all contributions, including bug fixes, feature requests, and translations.
+If you want to contribute to this CMS, please create a new branch and submit a pull request. We welcome all contributions, including bug fixes, feature requests, and translations.
 
 ### Thank you for your support!
 - If you appreciate my work, please consider [becoming a 'Sponsor'](https://github.com/sponsors/volkansah), giving a :star: to my projects, or following me. 
