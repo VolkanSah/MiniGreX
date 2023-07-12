@@ -1,4 +1,5 @@
 <?php
+require_once INIT_MGREX;
 // Define Theme files
 // Location and prefix for Theme-files
 define('TEMPLATE_PATH', "default");
