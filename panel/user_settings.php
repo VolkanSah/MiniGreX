@@ -1,6 +1,6 @@
 <?php
 // load init.php
-require_once "init.php";
+require_once INIT_MGREX;
 // Benutzer-ID aus der URL holen
 $benutzer_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
