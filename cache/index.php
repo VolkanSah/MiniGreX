@@ -1,0 +1,3 @@
+<?php
+// Platzhalter oder Redirektionslogik
+?>
