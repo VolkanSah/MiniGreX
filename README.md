@@ -49,7 +49,7 @@ To install MiniGreX CMS, follow these steps:
 - Prepared statements to prevent SQL injection attacks (ready)
 - Supports MySQL, MariaDB, and PostgreSQL (ready)
 - Force SSL (ready)
-- Admin Panel (Bootstrap starter ready)
+- Admin Panel (ready)
 - Lazyload + Image Customizer (coming soon)
 - Image & Video Database (coming soon)
 - SEO Tools (coming soon)
