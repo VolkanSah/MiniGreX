@@ -21,4 +21,4 @@
 // DO not use an index.php here !
 // DO not use an index.php here !
 // DO not use an index.php here !
-
+?>
