@@ -3,7 +3,7 @@
  *
  * MiniGreX - designed with security in mind!
  *
- * @file    dashboard.php
+ * @file    panel/dashboard.php
  * @package MiniGreX
  * @copyright  Volkan Kücükbudak 
  * @version 0.9 Beta
