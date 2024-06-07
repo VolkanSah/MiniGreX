@@ -1,4 +1,17 @@
-<div class="container">
+<?php
+/**
+ *
+ * MiniGreX - designed with security in mind!
+ *
+ * @file    themes/default/public/footer.php
+ * @package MiniGreX
+ * @copyright  Volkan Kücükbudak 
+ * @version 0.9 Beta
+ * @license MIT
+ * @link    https://github.com/VolkanSah/MiniGreX
+ *
+ * This is the public facing home
+ */<div class="container">
     <div class="row">
         <div class="col-md-8">
             <h1>Welcome to My Blog</h1>
