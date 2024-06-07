@@ -1,7 +1,18 @@
-<?php // optimize images
-
-// include init.php
-require_once INIT_MGREX;
+<?php
+/**
+ *
+ * MiniGreX - designed with security in mind!
+ *
+ * @file    includes/images.php
+ * @package MiniGreX
+ * @copyright  Volkan Kücükbudak 
+ * @version 0.9 Beta
+ * @license MIT
+ * @link    https://github.com/VolkanSah/MiniGreX
+ *
+ * Core Image-functions
+ * 
+ */
 
 /*
 To do
