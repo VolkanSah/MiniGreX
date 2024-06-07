@@ -1,4 +1,19 @@
 <?php
+/**
+ *
+ * MiniGreX - designed with security in mind!
+ *
+ * @file    panel/potin_settings.php
+ * @package MiniGreX
+ * @copyright  Volkan Kücükbudak 
+ * @version 0.9 Beta
+ * @license MIT
+ * @link    https://github.com/VolkanSah/MiniGreX
+ *
+ *  Admin : Option Settings
+ * 
+ * 
+ */
 require_once '../includes/init.php';
 require_once '../includes/functions.php';
 
