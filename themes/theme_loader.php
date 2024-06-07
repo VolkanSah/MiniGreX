@@ -28,9 +28,3 @@ function loadTheme($themeName, $page) {
 // Beispiel: Laden des "default" Themes und der "home" Seite
 loadTheme('default', 'home');
 ?>
-
-   
-
-
-
-
