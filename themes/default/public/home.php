@@ -11,7 +11,9 @@
  * @link    https://github.com/VolkanSah/MiniGreX
  *
  * This is the public facing home
- */<div class="container">
+ */
+?>
+<div class="container">
     <div class="row">
         <div class="col-md-8">
             <h1>Welcome to My Blog</h1>
