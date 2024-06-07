@@ -1,5 +1,5 @@
 <?php
-/* Comment: file ready!
+/* 
 In this example, Prepared Statements is used to avoid SQL injection attacks. The HTML code is stored in a heredoc notation inside a variable and then output. 
 The code also creates pagination for the articles by counting the total number of articles and adding links to the previous and next page.
 */
