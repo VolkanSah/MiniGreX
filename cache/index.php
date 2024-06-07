@@ -3,7 +3,7 @@
  *
  * MiniGreX - designed with security in mind!
  *
- * @file    includes/index,php.php
+ * @file    cache/index.php
  * @package MiniGreX
  * @copyright  Volkan Kücükbudak 
  * @version 0.9 Beta
