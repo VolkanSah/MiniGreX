@@ -1,5 +1,4 @@
 # MiniGreX - Content-Management-System
-### (NOT READY. IT WORKS BUT...)
 
 ![MiniGreX Logo](documentation/header_minigrex.png)
 
