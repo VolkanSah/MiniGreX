@@ -12,6 +12,7 @@
  *
  * This is a theme loader file do not edit it!
  */
+
 function loadTheme($themeName, $page) {
     $themePath = __DIR__ . "/$themeName";
 
