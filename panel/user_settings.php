@@ -1,4 +1,19 @@
 <?php
+/**
+ *
+ * MiniGreX - designed with security in mind!
+ *
+ * @file    panel/user_settings.php
+ * @package MiniGreX
+ * @copyright  Volkan Kücükbudak 
+ * @version 0.9 Beta
+ * @license MIT
+ * @link    https://github.com/VolkanSah/MiniGreX
+ *
+ *  Admin : User Settings
+ * 
+ * 
+ */
 // load init.php
 require_once INIT_MGREX;
 // Benutzer-ID aus der URL holen
