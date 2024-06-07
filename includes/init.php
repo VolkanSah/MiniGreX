@@ -1,23 +1,34 @@
-<?php 
-// /inculdes/init.php
-/** The access data for the database is defined here as constants to prevent them from being accidentally overwritten.
-In addition, the session.cookie_httponly and session.cookie_secure settings are set to make cookies more secure.
-Finally, it is checked whether the page is being accessed via HTTPS and, if necessary, a redirection to HTTPS is performed. */
-
-
+<?php
+/**
+ *
+ * MiniGreX - designed with security in mind!
+ *
+ * @file    includes/init.php.php
+ * @package MiniGreX
+ * @copyright  Volkan Kücükbudak 
+ * @version 0.9 Beta
+ * @license MIT
+ * @link    https://github.com/VolkanSah/MiniGreX
+ *
+ * The access data for the database is defined here as constants to prevent them from being accidentally overwritten.
+ * In addition, the session.cookie_httponly and session.cookie_secure settings are set to make cookies more secure.
+ * Finally, it is checked whether the page is being accessed via HTTPS and, if necessary, a redirection to HTTPS is performed.
+ * 
+ */
+// Note! set chmod to this file to 0444 or 0666
 // Please setup your database informations
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'your_db_name');
 define('DB_USER', 'your_db_user');
 define('DB_PASS', 'your_secret_pass');
 // Session name - please setup your_name_of_session'
-define('SESSION_NAME', 'your_name_of_session');
+define('SESSION_NAME', 'your_name_of_session'); 
 
 // Cookie security
 ini_set('session.cookie_httponly', 1);
 ini_set('session.cookie_secure', 1);
 
-// Debug uncoment to show debug-console in admin-area
+// Debug uncoment to debug
 //define('DEBUG_CONSOLE', 'true');
 
 // force SSL set to off for disable ssl force ! WARNING its not an good idea !
@@ -26,13 +37,6 @@ if ($_SERVER['HTTPS'] !== 'on') {
     exit();
 }
 
-// Define core files
-// define('INIT_MGREX', "init.php");
-// define('SECURITY_MGREX', "security.php");
-// define('LOOP_MGREX', "loop.php");
-// define('FUNCTION_MGREX', "functions.php");
-// define('UPLOAD_MGREX', "upload.php");
-// define('IMAGES_MGREX', "images.php");
 
 // Load required files
 require_once "../plugins/plugin_loader.php"; // plugin init (intigration of plugins) // future init over security.php
