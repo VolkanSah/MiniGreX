@@ -12,6 +12,7 @@
  *
  * This is the public facing header
  */
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
