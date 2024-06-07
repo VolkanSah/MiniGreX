@@ -141,48 +141,7 @@ If you want to contribute to this CMS, please create a new branch and submit a p
 ### License
 MiniGreX CMS is licensed under the MIT [LICENSE](LICENSE) . Feel free to use it for personal or commercial use.
 
-### Dev
-### Structur
 
-```
-MiniGreX-CMS-main/
-├── cache/
-│   └── README.md
-├── documentation/
-│   ├── README.md
-│   └── de/
-│       ├── README.md
-│       ├── admin-security.md
-│       ├── core-security.md
-│       ├── core_functions.md
-│       ├── plugin_image_db.md
-│       ├── plugin_seo_manager.md
-│       ├── public-security.md
-│       ├── security_upload_function.md
-│       └── social-integration.md
-├── includes/
-│   └── README.md
-├── panel/
-│   └── README.md
-├── plugins/
-│   ├── README.md
-│   ├── gateway_manager/
-│   │   └── README.md
-│   ├── get_local_settings/
-│   │   └── README.md
-│   ├── image_db/
-│   │   └── README.md
-│   ├── profile_manager/
-│   │   └── README.md
-│   ├── rolle_manager/
-│   │   └── README.md
-│   ├── seo_manager/
-│   │   └── README.md
-│   └── video_db/
-│       └── README.md
-├── themes/
-│   └── README.md
-└── README.md
 ```
 
 
