@@ -1,4 +1,17 @@
 <?php
+/**
+ *
+ * MiniGreX - designed with security in mind!
+ *
+ * @file    theme_loader.php
+ * @package MiniGreX
+ * @copyright  Volkan Kücükbudak 
+ * @version 0.9 Beta
+ * @license MIT
+ * @link    https://github.com/VolkanSah/MiniGreX
+ *
+ * This is a theme loader file do not edit it!
+ */
 function loadTheme($themeName, $page) {
     $themePath = __DIR__ . "/$themeName";
 
