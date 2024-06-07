@@ -42,35 +42,79 @@ To install MiniGreX CMS, follow these steps:
 ## Features -> still in progress
 - User authentication (ready)
 - Admin panel for managing the site information and user accounts (ready)
-- Ability to share links, images, and videos (only post, links ready)
+- Ability to share links, images, and videos (posts and links ready)
 - Comment system (ready)
-- Prepared statements to prevent SQL injection attacks (check)
-- Supports MySQL, MariaDB, and Postgres (check)
-- Fore SSL (check)
-- Admin Panel (Bootstrap starter?)
+- Prepared statements to prevent SQL injection attacks (ready)
+- Supports MySQL, MariaDB, and PostgreSQL (ready)
+- Force SSL (ready)
+- Admin Panel (Bootstrap starter ready)
+- Lazyload + Image Customizer (coming soon)
+- Image & Video Database (coming soon)
+- SEO Tools (coming soon)
+- Gateway Tools (coming soon)
+- Role Manager (ready)
+- Deep Web mode (for DevOps+) (coming soon)
+
+## The Admin Panel
+Allows the admin to manage site information and user accounts. It includes the following features:
+
+- Change the site title and description (ready)
+- Change the admin/User password (ready)
+- View a list of all users and delete user accounts (pagination needed)
+- Manage roles and permissions (ready)
+
+## The User Panel
+Provides users with the ability to manage their accounts and content. It includes the following features:
+
+- Change the User password (ready)
+- Create posts, links, comments, and upload images and videos (ready)
+
+## Public Files and Functions
+- `login.php` with prepared statements and CSRF protection (ready)
+- `register.php` with prepared statements and CSRF protection (ready)
+
+## Security Enhancements
+- Added Content Security Policy (CSP) and other security headers
+- Enhanced SQL injection prevention using PDO and prepared statements
+- Implemented CSRF protection mechanisms
+- Session security with session regeneration to prevent session fixation
+
+## Modular Architecture
+- Implemented a `plugin_loader.php` for modular integration of plugins
+
+## Role Manager
+- New plugin for managing roles and permissions
+- Admins can create, delete, and assign roles to users
+
+## Coming Soon
 - Lazyload + Image Customizer
 - Image & Video Database
 - SEO Tools
 - Gateway Tools
-- Role Manager
-- Deep Web mode (for DevOps+)
+- Deep Web mode for enhanced security and privacy (for DevOps+)
 
+### Summary of Recent Changes
+1. **Role Manager**:
+    - Integration of a new plugin for managing roles and permissions.
+    - Admins can create, delete, and assign roles to users.
 
-## The admin (panel)
-allows the admin to manage the site information and user accounts e.g. It includes the following features:
+2. **Security Enhancements**:
+    - Added Content Security Policy (CSP) and other security headers.
+    - Enhanced SQL injection prevention using PDO and prepared statements.
+    - Implemented CSRF protection mechanisms.
 
-- Change the site title and description (ready)
-- Change the admin/User password (ready)
-- View a list of all users and delete user accounts (Pagination needed)
+3. **Session Security**:
+    - Added a function to regenerate session IDs to prevent session fixation.
 
+4. **Modular Architecture**:
+    - Introduced a `plugin_loader.php` for modular integration of plugins.
 
-## The user (panel )
-- Change the User password 
-- create post, links, coments, upload images, videos
+5. **Improvements in `login.php` and `register.php`**:
+    - Usage of PDO and prepared statements.
+    - Integration of CSRF protection.
 
-## Public files> functions
-- login.php + stmt (ready)
-- register.php + stmt (ready)
+These changes and enhancements significantly improve the security, modularity, and administrative capabilities of the CMS.
+
 
 ## Usage
 Once you have installed MiniGreX-CMS, you can start using it to share links, images, and videos. The main page shows all the posts that have been shared, along with any comments that have been added. To add a new post, simply click on the "Add Post" button and fill in the form.
