@@ -1,9 +1,12 @@
 <?php
+
 class CMS {
     private $pdo;
+    private $cache;
 
     public function __construct($pdo) {
         $this->pdo = $pdo;
+        $this->cache = new Cache();
     }
 
     public function run() {
@@ -21,6 +24,16 @@ class CMS {
         }
     }
 
+    // Cache-Funktionen
+    public function cacheSet($key, $data, $ttl = 3600) {
+        $this->cache->set($key, $data, $ttl);
+    }
+
+    public function cacheGet($key) {
+        return $this->cache->get($key);
+    }
+
     // Weitere CMS-Funktionen hier hinzufügen
 }
+
 ?>
