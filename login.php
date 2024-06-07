@@ -1,4 +1,19 @@
 <?php
+/**
+ *
+ * MiniGreX - designed with security in mind!
+ *
+ * @file    login.php
+ * @package MiniGreX
+ * @copyright  Volkan Kücükbudak 
+ * @version 0.9 Beta
+ * @license MIT
+ * @link    https://github.com/VolkanSah/MiniGreX
+ *
+ *  Public: Login
+ * 
+ * 
+ */
 // load init.php
 require_once '../includes/init.php';
 require_once '../includes/security.php';
