@@ -1,4 +1,5 @@
-<?php // source https://github.com/VolkanSah/MiniGreX-CMS/
+<?php 
+// source https://github.com/VolkanSah/MiniGreX-CMS/
 // content management system
 //  .-.   .-..-..-. .-..-. .---. .----. .----..-.  .-.
 //  |  `.'  || ||  `| || |/   __}| {}  }| {_   \ \/ / 
@@ -19,6 +20,8 @@ define('FUNCTION_MGREX', "includes/functions.php");
 define('UPLOAD_MGREX', "includes/upload.php");
 // Define the image_handel file
 define('IMAGES_MGREX', "includes/images.php");
+// Define the cms file
+define('CMS_MGREX', "includes/cms.php");
 
 // Include the init file
 require_once INIT_MGREX;
@@ -27,11 +30,11 @@ require_once LOOP_MGREX;
 require_once FUNCTION_MGREX;
 require_once UPLOAD_MGREX;
 require_once IMAGES_MGREX;
+require_once CMS_MGREX;
 
 // Initialize the CMS
-$cms = new CMS();
+$cms = new CMS($pdo);
 
 // Start the user interface
 $cms->run();
-
 ?>
