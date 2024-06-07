@@ -1,40 +1,53 @@
-CREATE TABLE user (
+CREATE TABLE users (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
   username VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE post (
+CREATE TABLE posts (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
   user_id INTEGER NOT NULL,
   link VARCHAR(255) NOT NULL,
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-CREATE TABLE site (
+CREATE TABLE sites (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
   user_id INTEGER NOT NULL,
   link VARCHAR(255) NOT NULL,
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 CREATE TABLE comments (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
   post_id INTEGER NOT NULL,
   text VARCHAR(255) NOT NULL,
-  FOREIGN KEY (mgx_post_id) REFERENCES post(id)
+  FOREIGN KEY (post_id) REFERENCES posts(id)
 );
 
 CREATE TABLE options (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
   user_id INTEGER NOT NULL,
   text VARCHAR(255) NOT NULL,
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-CREATE TABLE role (
+CREATE TABLE roles (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE user_roles (
   user_id INTEGER NOT NULL,
-  text VARCHAR(255) NOT NULL,
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  role_id INTEGER NOT NULL,
+  PRIMARY KEY (user_id, role_id),
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (role_id) REFERENCES roles(id)
+);
+
+CREATE TABLE permissions (
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  role_id INTEGER NOT NULL,
+  permission VARCHAR(255) NOT NULL,
+  FOREIGN KEY (role_id) REFERENCES roles(id)
 );
