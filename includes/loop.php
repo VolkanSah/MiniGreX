@@ -1,8 +1,19 @@
 <?php
-/* 
-In this example, Prepared Statements is used to avoid SQL injection attacks. The HTML code is stored in a heredoc notation inside a variable and then output. 
-The code also creates pagination for the articles by counting the total number of articles and adding links to the previous and next page.
-*/
+/**
+ *
+ * MiniGreX - designed with security in mind!
+ *
+ * @file    includes/loop.php
+ * @package MiniGreX
+ * @copyright  Volkan Kücükbudak 
+ * @version 0.9 Beta
+ * @license MIT
+ * @link    https://github.com/VolkanSah/MiniGreX
+ *
+ * In this example, Prepared Statements is used to avoid SQL injection attacks. The HTML code is stored in a heredoc notation inside a variable and then output. 
+ * The code also creates pagination for the articles by counting the total number of articles and adding links to the previous and next page.
+ * 
+ */
 
 // include init.php
 require_once INIT_MGREX;
