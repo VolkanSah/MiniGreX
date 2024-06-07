@@ -1,4 +1,4 @@
-# MiniGreX - Content-Management-System
+# MiniGreX - Content Management System
 
 ![MiniGreX Logo](documentation/header_minigrex.png)
 
