@@ -1,14 +1,9 @@
-<?php
-
-// create footer
-$html = "<footer class="pt-5 my-5 text-muted border-top">";
-$html = " Created with MiniGreX &copy; 2023";
-$html = " </footer>";
-$html = "</div>";
-$html = "<script src="https://cdn.com/bootstrap.bundle.min.js"></script>";    
-// HTML-Fuß in Variable schreiben
-$html .= "</body>
-</html>";
-// HTML-Output ausgeben
-print($html);
-
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+        <span class="text-muted">&copy; <?php echo date('Y'); ?> My Blog. All rights reserved.</span>
+    </div>
+</footer>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
