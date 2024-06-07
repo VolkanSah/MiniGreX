@@ -1,102 +1,44 @@
-<?PHP
-// in progress 3/4 ready
-// miss lush cache
-// miss image/video cache
-// ??
-// include der "init.php"
-require_once INIT_MGREX;
-// Location and prefix for cache files
-define('CACHE_PATH', "cache/");
-define('CACHE_PATH_POST', CACHE_PATH . "posts");
-define('CACHE_PATH_PAGE', CACHE_PATH . "pages");
-define('CACHE_PATH_UPLOAD', CACHE_PATH . "uploads");
+<?php
 
-// How long to keep the cache files (hours)
-define('CACHE_TIME', 24);
+class Cache {
+    private $cacheDir;
 
-// Return location and name for cached post
-function cache_file_post($id)
-{
-    return CACHE_PATH_POST . "/" . $id . ".html";
-}
+    public function __construct($cacheDir = 'cache') {
+        $this->cacheDir = $cacheDir;
 
-// Return location and name for cached page
-function cache_file_page($slug)
-{
-    return CACHE_PATH_PAGE . "/" . $slug . ".html";
-}
-
-// Return location and name for cached upload
-function cache_file_upload($file_path)
-{
-    return CACHE_PATH_UPLOAD . "/" . md5($file_path) . ".html";
-}
-
-// If present and not expired show cached files
-function cache_display()
-{
-    $uri = $_SERVER['REQUEST_URI'];
-    $file = '';
-
-    // Check if URI is for a post or page
-    if (strpos($uri, '/post/') !== false) {
-        // URI is for a post
-        $post_id = explode('/', $uri)[2];
-        $file = cache_file_post($post_id);
-    } elseif (strpos($uri, '/page/') !== false) {
-        // URI is for a page
-        $slug = explode('/', $uri)[2];
-        $file = cache_file_page($slug);
-    } elseif (strpos($uri, '/uploads/') !== false) {
-        // URI is for an upload
-        $file_path = explode('/', $uri)[2];
-        $file = cache_file_upload($file_path);
+        // Verzeichnis erstellen, falls es nicht existiert
+        if (!is_dir($this->cacheDir)) {
+            mkdir($this->cacheDir, 0777, true);
+        }
     }
 
-    // Check if file exists and timestamp
-    if (!file_exists($file)) {
-        return;
-    }
-    if (filemtime($file) < time() - CACHE_TIME * 3600) {
-        return;
+    public function set($key, $data, $ttl = 3600) {
+        $filePath = $this->getFilePath($key);
+        $expiry = time() + $ttl;
+        $cacheData = ['expiry' => $expiry, 'data' => $data];
+        file_put_contents($filePath, serialize($cacheData));
     }
 
-    // Display cache file and stop processing
-    echo file_get_contents($file);
-    exit;
+    public function get($key) {
+        $filePath = $this->getFilePath($key);
+
+        if (file_exists($filePath)) {
+            $cacheData = unserialize(file_get_contents($filePath));
+
+            if ($cacheData['expiry'] > time()) {
+                return $cacheData['data'];
+            } else {
+                // Cache abgelaufen
+                unlink($filePath);
+            }
+        }
+
+        return false;
+    }
+
+    private function getFilePath($key) {
+        return $this->cacheDir . '/' . md5($key) . '.cache';
+    }
 }
 
-// Write cache files
-function cache_page($content)
-{
-    $uri = $_SERVER['REQUEST_URI'];
-    $file = '';
-
-    // Check if URI is for a post or page
-    if (strpos($uri, '/post/') !== false) {
-        // URI is for a post
-        $post_id = explode('/', $uri)[2];
-        $file = cache_file_post($post_id);
-    } elseif (strpos($uri, '/page/') !== false) {
-        // URI is for a page
-        $slug = explode('/', $uri)[2];
-        $file = cache_file_page($slug);
-    } elseif (strpos($uri, '/uploads/') !== false) {
-        // URI is for an upload
-        $file_path = explode('/', $uri)[2];
-        $file = cache_file_upload($file_path);
-    }
-
-    // Write content to cache file
-    if (false !== ($f = @fopen($file, 'w'))) {
-        fwrite($f, $content);
-        fclose($f);
-    }
-    return $content;
-}
-
-// Execution stops here if valid cache file found
-cache_display();
-
-// Enable output buffering and create cache file
-ob_start('cache_page');
+?>

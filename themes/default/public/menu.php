@@ -1,30 +1,16 @@
-<?php
-
-// menu in variable
-$html = "<nav class="navbar navbar-expand-lg navbar-light bg-light">";
-$html = "<div class="container-fluid">";
-$html = "<a class="navbar-brand" href="#">MiniGreX-CMS</a>";
-$html = "<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">";
-$html = " <span class="navbar-toggler-icon"></span>";
-$html = "</button>";
-$html = "<div class="collapse navbar-collapse" id="navbarNav">";
-$html = "<ul class="navbar-nav">";
-$html = "<li class="nav-item">";
-$html = "<a class="nav-link active" aria-current="page" href="#">Home</a>";
-$html = "</li>";
-$html = "<li class="nav-item">";
-$html = "<a class="nav-link" href="#">Features</a>";
-$html = "</li>";
-$html = "<li class="nav-item">";
-$html = "<a class="nav-link" href="#">Pricing</a>";
-$html = "</li>";
-$html = "<li class="nav-item">";
-$html = "<a class="nav-link disabled">Disabled</a>";
-$html = "</li>";
-$html = "</ul>";
-$html = "</div>";
-$html = "</div>";
-$html = "</nav>";
-// HTML-Output 
-print($html);
-// close databse connection
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">My Blog</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="home.php">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="post.php">Post</a>
+            </li>
+        </ul>
+    </div>
+</nav>

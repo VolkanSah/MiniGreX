@@ -1,32 +1,38 @@
 <?php
 // load init.php
-require_once INIT_MGREX;
+require_once '../includes/init.php';
+require_once '../includes/security.php';
 
 // Wenn bereits angemeldet, dann weiterleiten zur Index-Seite
 if (is_logged_in()) {
   header('Location: index.php');
   exit();
 }
-// check formular sending
+
+// Überprüfen, ob das Formular abgeschickt wurde
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $username = mysqli_real_escape_string($conn, $_POST['username']);
-  $password = mysqli_real_escape_string($conn, $_POST['password']);
+  $csrf_token = $_POST['csrf_token'];
+  if (!validate_csrf_token($csrf_token)) {
+      die('Ungültiges CSRF-Token.');
+  }
 
-  // call userdata with stmt only
-  $stmt = $conn->prepare("SELECT id, password FROM users WHERE username = ?");
-  $stmt->bind_param("s", $username);
+  $username = sanitizeInput($_POST['username']);
+  $password = sanitizeInput($_POST['password']);
+
+  // Benutzeranfrage mit vorbereiteten Anweisungen
+  $stmt = $pdo->prepare("SELECT id, password FROM users WHERE username = :username");
+  $stmt->bindParam(':username', $username, PDO::PARAM_STR);
   $stmt->execute();
-  $result = $stmt->get_result();
-  $row = $result->fetch_assoc();
+  $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-  // check password
+  // Passwort überprüfen
   if ($row && password_verify($password, $row['password'])) {
-    // login allowed, Session start
-    session_start();
+    // Anmeldung erlaubt, Sitzung starten
+    regenerate_session();
     $_SESSION['user_id'] = $row['id'];
     $_SESSION['user_role'] = 'user';
 
-    // redirekct to Index
+    // Weiterleitung zur Index-Seite
     header('Location: index.php');
     exit();
   } else {
@@ -35,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 // HTML-Kopf ausgeben
+$csrf_token = generate_csrf_token();
 $html = "
   <h1>Login</h1>";
 
@@ -43,19 +50,18 @@ if (isset($error_message)) {
   $html .= "<p>{$error_message}</p>";
 }
 
-// output login formular
+// Ausgabe des Login-Formulars
 $html .= "<form method='post'>
-    <label for='username'>Username:</label>
-    <input type='text' id='username' name='username'>
+    <input type='hidden' name='csrf_token' value='{$csrf_token}'>
+    <label for='username'>Benutzername:</label>
+    <input type='text' id='username' name='username' required>
     <br>
-    <label for='password'>Password:</label>
-    <input type='password' id='password' name='password'>
+    <label for='password'>Passwort:</label>
+    <input type='password' id='password' name='password' required>
     <br>
     <input type='submit' value='Login'>
   </form>";
 
 // HTML-Output 
 echo $html;
-
-// Verbindung zur Datenbank schließen
-$conn->close();
+?>
