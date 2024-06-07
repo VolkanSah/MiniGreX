@@ -1,6 +1,6 @@
-# MiniGreX CMS (NOT READY. IT WORKS BUT...)
+# MiniGreX - Content-Management-System
+### (NOT READY. IT WORKS BUT...)
 
-⚠️ still developing, it will work but...! Want to help me? smallest high secure multi-cms for DevOps & Hidden World 👮
 ![MiniGreX Logo](documentation/header_minigrex.png)
 
 ## Table of Contents
@@ -14,6 +14,9 @@
 - [Credits](#credits)
 - [Contributing](#contributing)
 - [License](#license)
+
+> [!IMPORTANT]
+> ⚠️ still developing, it will work but...! Want  help me? Smallest high secure multi-cms for DevOps 👮
 
 ## Security
 MiniGreX-CMS will be designed with security in mind, and the code will be written to minimize the risk of SQL injection attacks and other security vulnerabilities. To ensure maximum security, we recommend keeping the CMS up-to-date with the latest security patches and using strong passwords for all user accounts.
