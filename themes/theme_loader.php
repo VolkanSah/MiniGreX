@@ -3,7 +3,7 @@
  *
  * MiniGreX - designed with security in mind!
  *
- * @file    theme_loader.php
+ * @file    themes/theme_loader.php
  * @package MiniGreX
  * @copyright  Volkan Kücükbudak 
  * @version 0.9 Beta
