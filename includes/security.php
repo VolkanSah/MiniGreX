@@ -1,7 +1,19 @@
-<?php 
-/* 
-Security Options for MiniGreX CMS
-*/
+<?php
+/**
+ *
+ * MiniGreX - designed with security in mind!
+ *
+ * @file    includes/security.php
+ * @package MiniGreX
+ * @copyright  Volkan Kücükbudak 
+ * @version 0.9 Beta
+ * @license MIT
+ * @link    https://github.com/VolkanSah/MiniGreX
+ *
+ * Security options for MiniGreX 
+ * 
+ */
+
 // include der "init.php"
 require_once INIT_MGREX;
 
