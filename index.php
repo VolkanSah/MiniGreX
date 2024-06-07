@@ -22,6 +22,8 @@ define('UPLOAD_MGREX', "includes/upload.php");
 define('IMAGES_MGREX', "includes/images.php");
 // Define the cms file
 define('CMS_MGREX', "includes/cms.php");
+// Define the cache file
+define('CACHE_MGREX', "cache/cache_db.php");
 
 // Include the init file
 require_once INIT_MGREX;
@@ -31,6 +33,7 @@ require_once FUNCTION_MGREX;
 require_once UPLOAD_MGREX;
 require_once IMAGES_MGREX;
 require_once CMS_MGREX;
+require_once CACHE_MGREX;
 
 // Initialize the CMS
 $cms = new CMS($pdo);
