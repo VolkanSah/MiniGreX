@@ -1,21 +1,33 @@
 <?php
-require_once INIT_MGREX;
-// Define Theme files
-// Location and prefix for Theme-files
-define('TEMPLATE_PATH', "default");
-define('TEMPLATE_CSS_PATH', TEMPLATE_PATH . "css");
-define('TEMPLATE_JS_PATH', TEMPLATE_PATH . "js");
-define('TEMPLATE_HEADER', TEMPLATE_PATH . "public/header.php");
-define('TEMPLATE_MENU', TEMPLATE_PATH . "public/menu.php");
-define('TEMPLATE_HOME', TEMPLATE_PATH . "public/home.php");
-define('TEMPLATE_FOOTER', TEMPLATE_PATH . "public/footer.php");
-define('TEMPLATE_POST', TEMPLATE_PATH . "public/post.php");
-define('TEMPLATE_POST_SIDEBAR', TEMPLATE_PATH . "publi/sidebar_post.php");
-define('TEMPLATE_SITE', TEMPLATE_PATH . "public/site.php");
-define('TEMPLATE_SITE_SIDEBAR', TEMPLATE_PATH . "public/sidebar_site.php");
-define('TEMPLATE_CSS', TEMPLATE_CSS_PATH . "default.css");
-define('TEMPLATE_JS', TEMPLATE_JS_PATH . "default.js");
-// end theme_loader
+function loadTheme($themeName, $page) {
+    $themePath = __DIR__ . "/$themeName";
+
+    // Sicherheitscheck: Überprüfen, ob das Theme existiert
+    if (!is_dir($themePath)) {
+        die('Theme nicht gefunden.');
+    }
+
+    // Sicherheitscheck: Überprüfen, ob die Seite existiert
+    $pagePath = "$themePath/public/$page.php";
+    if (!file_exists($pagePath)) {
+        die('Seite nicht gefunden.');
+    }
+
+    // Laden der gemeinsamen Dateien (Header, Menü, Sidebar)
+    require_once "$themePath/public/header.php";
+    require_once "$themePath/public/menu.php";
+    require_once "$themePath/public/sidebar.php";
+
+    // Laden der spezifischen Seite
+    require_once $pagePath;
+
+    // Laden des Fußbereichs
+    require_once "$themePath/public/footer.php";
+}
+
+// Beispiel: Laden des "default" Themes und der "home" Seite
+loadTheme('default', 'home');
+?>
 
    
 
