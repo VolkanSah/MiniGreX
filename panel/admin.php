@@ -1,4 +1,19 @@
 <?php
+/**
+ *
+ * MiniGreX - designed with security in mind!
+ *
+ * @file    panel/admin.php
+ * @package MiniGreX
+ * @copyright  Volkan Kücükbudak 
+ * @version 0.9 Beta
+ * @license MIT
+ * @link    https://github.com/VolkanSah/MiniGreX
+ *
+ *  admin stuff, what else?
+ * 
+ * 
+ */
 // load init.php
 require_once INIT_MGREX;
 // Check befor sending formular
