@@ -1,5 +1,5 @@
 
-# MiniGreX - Content Management System
+# MiniGreX - Content Management Framework
 
 ![MiniGreX Logo](docs/header_minigrex.png)
 
