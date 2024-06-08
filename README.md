@@ -134,5 +134,5 @@ MiniGreX CMS is developed and maintained by:
 
 ## License
 
-MiniGreX CMS is licensed under the MIT [LICENSE](LICENSE). Feel free to use it for personal or commercial purposes.
+MiniGreX CMS is licensed under a "Privat" [LICENSE](LICENSE). Feel free to use it for personal purposes not commercial purposes!
 
