@@ -14,8 +14,13 @@
  * 
  * 
  */
-// load init.php
-require_once INIT_MGREX;
+require_once '../includes/init.php';
+require_once '../includes/functions.php';
+
+if (!checkLoginStatus()) {
+    header('Location: ../login.php');
+    exit;
+}
 // Check befor sending formular
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Seitentitel und Meta-Informationen speichern
