@@ -1,54 +1,40 @@
-/* globals Chart:false, feather:false */
-
-(() => {
-  'use strict'
-
-  feather.replace({ 'aria-hidden': 'true' })
-
-  // Graphs
-  const ctx = document.getElementById('myChart')
-  // eslint-disable-next-line no-unused-vars
-  const myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: [
-       
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday',
-        'Sunday'
-      ],
-      datasets: [{
-        data: [
-          15339,
-          21345,
-          18483,
-          24003,
-          23489,
-          24092,
-          12034
-        ],
-        lineTension: 0,
-        backgroundColor: 'transparent',
-        borderColor: '#007bff',
-        borderWidth: 4,
-        pointBackgroundColor: '#007bff'
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: false
-          }
-        }]
-      },
-      legend: {
-        display: false
-      }
+document.addEventListener('DOMContentLoaded', () => {
+  // Modal öffnen
+  function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.style.display = 'block';
     }
-  })
-})()
+  }
+
+  // Modal schließen
+  function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.style.display = 'none';
+    }
+  }
+
+  // Event Listener für Öffnen-Buttons
+  document.querySelectorAll('.btn-open-modal').forEach(button => {
+    button.addEventListener('click', () => {
+      const modalId = button.getAttribute('data-target');
+      openModal(modalId);
+    });
+  });
+
+  // Event Listener für Schließen-Buttons
+  document.querySelectorAll('.modal-close').forEach(button => {
+    button.addEventListener('click', () => {
+      const modalId = button.getAttribute('data-target');
+      closeModal(modalId);
+    });
+  });
+
+  // Schließen des Modals bei Klick außerhalb des Inhalts
+  window.addEventListener('click', (event) => {
+    if (event.target.classList.contains('modal')) {
+      event.target.style.display = 'none';
+    }
+  });
+});
