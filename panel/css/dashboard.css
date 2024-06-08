@@ -1,1 +1,169 @@
 
+/* Reset / Normalize */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+/* Layout Containers */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Navigation */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Header */
+header {
+  background-color: #f8f8f8;
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+}
+
+/* Main Content */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.content {
+  flex: 3;
+  padding: 1rem;
+  background-color: #fff;
+  margin-right: 1rem;
+  border: 1px solid #ddd;
+}
+
+.sidebar {
+  flex: 1;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.modal-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  .content {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar {
+    margin-bottom: 1rem;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .content {
+    flex: 2;
+  }
+
+  .sidebar {
+    flex: 1;
+  }
+}
