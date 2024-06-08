@@ -3,7 +3,7 @@
  *
  * MiniGreX - designed with security in mind!
  *
- * @file    panel/potin_settings.php
+ * @file    panel/option_settings.php
  * @package MiniGreX
  * @copyright  Volkan Kücükbudak 
  * @version 0.9 Beta
