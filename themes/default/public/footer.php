@@ -13,12 +13,11 @@
  * This is the public facing footer
  */
 ?>
-<footer class="footer mt-auto py-3 bg-light">
+<footer class="footer">
     <div class="container">
         <span class="text-muted">&copy; <?php echo date('Y'); ?> <?php echo get('copyright'); ?> . All rights reserved.</span>
     </div>
 </footer>
-<script src="../js/jquery.min.js"></script>
-<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/defult.js"></script>
 </body>
 </html>
