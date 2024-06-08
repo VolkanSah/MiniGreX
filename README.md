@@ -20,10 +20,10 @@
 > ⚠️ MiniGreX is still in development. It works, but improvements are ongoing. Want to help? The smallest high-secure multi-CMS for DevOps 👮
 
 ## Security
-MiniGreX CMS is designed with security in mind, minimizing the risk of SQL injection and other vulnerabilities. Keep the CMS up-to-date with the latest patches and use strong passwords for all accounts.
+MiniGreX is designed with security in mind, minimizing the risk of SQL injection and other vulnerabilities. Keep MiniGreX up-to-date with the latest patches and use strong passwords for all accounts.
 
 ## Introduction
-MiniGreX CMS is a lightweight and secure system for sharing links, images, videos, and comments. It supports MySQL, MariaDB, and PostgreSQL, and uses PHP PDO with prepared statements for security.
+MiniGreX is a lightweight and secure system "not only" for sharing links, images, videos, and comments. It supports MySQL, MariaDB, and PostgreSQL, and uses PHP PDO with prepared statements for security.
 
 [Documentation for this project](docs/)
 
@@ -54,7 +54,10 @@ To install MiniGreX CMS, follow these steps:
 - [ ] Image & Video Database 
 - [ ] SEO Tools
 - [ ] Gateway Tools
-- [ ] Deep Web mode
+- [ ] Deep/Dark Web mode
+- [ ] Some admin stuff
+- [ ] Profile Manager
+- [ ] Some secrets 😃
 
 ## Admin Panel
 The admin panel allows admins to manage site information and user accounts, including:
@@ -67,6 +70,7 @@ The admin panel allows admins to manage site information and user accounts, incl
 The user panel allows users to manage their accounts and content, including:
 - Changing user passwords
 - Creating posts, links, comments, and uploading images and videos
+- Update Profile
 
 ## Public Files and Functions
 - `login.php` and `register.php` with prepared statements and CSRF protection
@@ -79,6 +83,7 @@ The user panel allows users to manage their accounts and content, including:
 
 ## Modular Architecture
 - `plugin_loader.php` for modular plugin integration
+- `theme_loader.php` for modular theme integration
 
 ## Role Manager
 - Manage roles and permissions
@@ -90,9 +95,11 @@ The user panel allows users to manage their accounts and content, including:
 - SEO Tools
 - Gateway Tools
 - Deep/Dark Web mode for enhanced security and privacy (for DevOps)
+- Profile Manager
 
 ## Changelog
-### Latest Updates
+### Latest Updates 
+###### 06/2024
 1. **Role Manager**:
     - New plugin for managing roles and permissions.
     - Admins can create, delete, and assign roles to users.
@@ -125,12 +132,13 @@ We welcome contributions to MiniGreX CMS, including bug fixes, feature requests,
 
 ## Support
 
-Your support is greatly appreciated. If you find MiniGreX CMS useful, consider starring the project on GitHub or becoming a [Sponsor](https://github.com/sponsors/volkansah).
+Your support is greatly appreciated. If you find MiniGreX CMS useful, consider ⭐ the project on GitHub or becoming a [Sponsor](https://github.com/sponsors/volkansah).
 
 ## Credits
 
 MiniGreX CMS is developed and maintained by:
 - [Volkan Kücükbudak](https://github.com/volkansah)
+- [Source of MiniGreX](https://github.com/VolkanSah/MiniGreX/)
 
 ## License
 
