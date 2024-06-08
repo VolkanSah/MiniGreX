@@ -37,7 +37,6 @@ if ($_SERVER['HTTPS'] !== 'on') {
     exit();
 }
 
-
 // Load required files
 require_once "../plugins/plugin_loader.php"; // plugin init (intigration of plugins) // future init over security.php
 require_once "../themes/theme_loader.php"; // theme init (intigration of plugins) // future init over security.php
@@ -57,10 +56,17 @@ define("USERS_TABLE", "users"); // developed !
 define("POSTS_TABLE", "posts"); // developed !
 define("SITES_TABLE", "sites");  // not developed !
 define("COMMENTS_TABLE", "comments"); // developed !
+define("ROLES_TABLE", "roles"); // developed !
+define("USER_ROLES_TABLE", "user_roles"); // developed !
+define("PERMISSIONS_TABLE", "permissions"); // developed !
+define("ROLES_TABLE", "roles"); // developed !
+define("USER_ROLES_TABLE", "user_roles"); // developed !
+define("PERMISSIONS_TABLE", "permissions"); // developed !
+
 // if exist define und uncoment
 //define("IMAGE_TABLE", "imagedbs"); // not developed !
 //define("VIDEO_TABLE", "videodbs"); // not developed !
-//define("ROLE_TABLE", "role_managers"); // not developed !
+
 //define("SEO_TABLE", "seo_managers"); // not developed !
 //define("PROFILE_TABLE", "profile_managerr"); // not developed !
 //define("SECURITY_TABLE", "security_manager"); // not developed !
@@ -68,23 +74,43 @@ define("COMMENTS_TABLE", "comments"); // developed !
 // User prepared statements
 $stmt_select_all_users = $pdo->prepare("SELECT * FROM " . USERS_TABLE);
 $stmt_select_user_by_id = $pdo->prepare("SELECT * FROM " . USERS_TABLE . " WHERE id = :id");
-$stmt_insert_user = $pdo->prepare("INSERT INTO " . USERS_TABLE . " (username, password, email) VALUES (:username, :password, :email)");
+$stmt_insert_user = $pdo->prepare("INSERT INTO " . USERS_TABLE . " (username, password) VALUES (:username, :password)");
+
 // Posts with category prepared statements
 $stmt_select_all_posts = $pdo->prepare("SELECT * FROM " . POSTS_TABLE);
 $stmt_select_post_by_id = $pdo->prepare("SELECT * FROM " . POSTS_TABLE . " WHERE id = :id");
-$stmt_insert_post = $pdo->prepare("INSERT INTO " . POSTS_TABLE . " (title, content, author_id, category) VALUES (:title, :content, :author_id, :category)");
+$stmt_insert_post = $pdo->prepare("INSERT INTO " . POSTS_TABLE . " (user_id, link) VALUES (:user_id, :link)");
+
 // Comments prepared statements
 $stmt_select_comments_by_post_id = $pdo->prepare("SELECT * FROM " . COMMENTS_TABLE . " WHERE post_id = :post_id");
-$stmt_insert_comment = $pdo->prepare("INSERT INTO " . COMMENTS_TABLE . " (post_id, author_name, content) VALUES (:post_id, :author_name, :content)");
+$stmt_insert_comment = $pdo->prepare("INSERT INTO " . COMMENTS_TABLE . " (post_id, text) VALUES (:post_id, :text)");
+
 // Sites with category prepared statements
 $stmt_select_all_sites = $pdo->prepare("SELECT * FROM " . SITES_TABLE);
 $stmt_select_sites_by_id = $pdo->prepare("SELECT * FROM " . SITES_TABLE . " WHERE id = :id");
-$stmt_insert_sites = $pdo->prepare("INSERT INTO " . SITES_TABLE . " (title, content, author_id, category) VALUES (:title, :content, :author_id, :category)");
+$stmt_insert_sites = $pdo->prepare("INSERT INTO " . SITES_TABLE . " (user_id, link) VALUES (:user_id, :link)");
+
 // image_db prepared statements
 //$stmt_select_all_image_dbs = $pdo->prepare("SELECT * FROM " . IMAGE_TABLE);
 //$stmt_select_image_dbs_by_id = $pdo->prepare("SELECT * FROM " . IMAGE_TABLE . " WHERE id = :id");
 //$stmt_insert_image_dbs = $pdo->prepare("INSERT INTO " . IMAGE_TABLE . " (title, content, link, author_id, category) VALUES (:title, :content, :link, :author_id, :category)");
+
 // video_db prepared statements
 //$stmt_select_all_video_dbs = $pdo->prepare("SELECT * FROM " . VIDEO_TABLE);
 //$stmt_select_video_dbs_by_id = $pdo->prepare("SELECT * FROM " . VIDEO_TABLE . " WHERE id = :id");
 //$stmt_insert_video_dbs = $pdo->prepare("INSERT INTO " . VIDEO_TABLE . " (title, content, link, author_id, category) VALUES (:title, :content, :link, :author_id, :category)");
+
+// Role Manager prepared statements
+$stmt_select_all_roles = $pdo->prepare("SELECT * FROM " . ROLES_TABLE);
+$stmt_select_role_by_id = $pdo->prepare("SELECT * FROM " . ROLES_TABLE . " WHERE id = :id");
+$stmt_insert_role = $pdo->prepare("INSERT INTO " . ROLES_TABLE . " (name) VALUES (:name)");
+
+$stmt_select_all_user_roles = $pdo->prepare("SELECT * FROM " . USER_ROLES_TABLE);
+$stmt_select_user_role_by_user_id = $pdo->prepare("SELECT * FROM " . USER_ROLES_TABLE . " WHERE user_id = :user_id");
+$stmt_insert_user_role = $pdo->prepare("INSERT INTO " . USER_ROLES_TABLE . " (user_id, role_id) VALUES (:user_id, :role_id)");
+
+$stmt_select_all_permissions = $pdo->prepare("SELECT * FROM " . PERMISSIONS_TABLE);
+$stmt_select_permission_by_role_id = $pdo->prepare("SELECT * FROM " . PERMISSIONS_TABLE . " WHERE role_id = :role_id");
+$stmt_insert_permission = $pdo->prepare("INSERT INTO " . PERMISSIONS_TABLE . " (role_id, permission) VALUES (:role_id, :permission)");
+
+?>
