@@ -1,5 +1,5 @@
 <?php 
-// source https://github.com/VolkanSah/MiniGreX-CMS/
+// source https://github.com/VolkanSah/MiniGreX
 // content management system
 //  .-.   .-..-..-. .-..-. .---. .----. .----..-.  .-.
 //  |  `.'  || ||  `| || |/   __}| {}  }| {_   \ \/ / 
