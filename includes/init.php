@@ -59,9 +59,7 @@ define("COMMENTS_TABLE", "comments"); // developed !
 define("ROLES_TABLE", "roles"); // developed !
 define("USER_ROLES_TABLE", "user_roles"); // developed !
 define("PERMISSIONS_TABLE", "permissions"); // developed !
-define("ROLES_TABLE", "roles"); // developed !
-define("USER_ROLES_TABLE", "user_roles"); // developed !
-define("PERMISSIONS_TABLE", "permissions"); // developed !
+
 
 // if exist define und uncoment
 //define("IMAGE_TABLE", "imagedbs"); // not developed !
