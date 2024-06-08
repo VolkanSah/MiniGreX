@@ -25,7 +25,7 @@ MiniGreX CMS is designed with security in mind, minimizing the risk of SQL injec
 ## Introduction
 MiniGreX CMS is a lightweight and secure system for sharing links, images, videos, and comments. It supports MySQL, MariaDB, and PostgreSQL, and uses PHP PDO with prepared statements for security.
 
-[Documentation for this project](documentation/)
+[Documentation for this project](docs/)
 
 ## Installation
 To install MiniGreX CMS, follow these steps:
