@@ -50,6 +50,8 @@ To install MiniGreX CMS, follow these steps:
 - [x] Supports MySQL, MariaDB, and PostgreSQL
 - [x] Force SSL
 - [x] Role Manager
+- [x] Caching
+- [x] Some "Test tools"
 - [ ] Lazyload + Image Customizer 
 - [ ] Image & Video Database 
 - [ ] SEO Tools
