@@ -1,7 +1,7 @@
 
 # MiniGreX - Content Management System
 
-![MiniGreX Logo](documentation/header_minigrex.png)
+![MiniGreX Logo](docs/header_minigrex.png)
 
 ## Table of Contents
 - [Security](#security)
