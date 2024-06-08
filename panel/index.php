@@ -16,6 +16,7 @@
  */
 require_once '../includes/init.php';
 require_once '../includes/functions.php';
+require_once '../includes/security.php';
 
 if (!checkLoginStatus()) {
     header('Location: ../login.php');
