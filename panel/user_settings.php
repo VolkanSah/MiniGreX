@@ -14,8 +14,13 @@
  * 
  * 
  */
-// load init.php
-require_once INIT_MGREX;
+require_once '../includes/init.php';
+require_once '../includes/functions.php';
+
+if (!checkLoginStatus()) {
+    header('Location: ../login.php');
+    exit;
+}
 // Benutzer-ID aus der URL holen
 $benutzer_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
