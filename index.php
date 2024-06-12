@@ -20,14 +20,14 @@ define('PLUGIN_LOADER', __DIR__ . '/plugins/plugin_loader.php');
 define('THEME_LOADER', __DIR__ . '/themes/theme_loader.php');
 
 // Include the init file
-require_once INIT_MGREX;
-require_once SECURITY_MGREX;
-require_once LOOP_MGREX;
-require_once FUNCTION_MGREX;
-require_once UPLOAD_MGREX;
-require_once IMAGES_MGREX;
-require_once CMS_MGREX;
-require_once CACHE_MGREX;
+require_once INIT_MGREX; // MiniGrex init
+require_once SECURITY_MGREX; // security init
+require_once LOOP_MGREX; // loop init
+require_once FUNCTION_MGREX; // functions init
+require_once UPLOAD_MGREX; // uplads init
+require_once IMAGES_MGREX; // images init
+require_once CMS_MGREX; // CMS init
+require_once CACHE_MGREX; // ccahe init
 require_once PLUGIN_LOADER; // plugin init (integration of plugins)
 require_once THEME_LOADER; // theme init (integration of plugins)
 
