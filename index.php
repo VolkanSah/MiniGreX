@@ -7,23 +7,17 @@
 //  `-' ` `-'`-'`-' `-'`-' `---' `-' `-'`----'`-'  `-'
 //  Copyright @S. Volkan Kücükbudak
 
-// Define the init file
-define('INIT_MGREX', "includes/init.php");
-// Define core files
-// Define the security file
-define('SECURITY_MGREX', "includes/security.php");
-// Define the loop file
-define('LOOP_MGREX', "includes/loop.php");
-// Define the core_function file
-define('FUNCTION_MGREX', "includes/functions.php");
-// Define the upload_handel file
-define('UPLOAD_MGREX', "includes/upload.php");
-// Define the image_handel file
-define('IMAGES_MGREX', "includes/images.php");
-// Define the cms file
-define('CMS_MGREX', "includes/cms.php");
-// Define the cache file
-define('CACHE_MGREX', "cache/cache_db.php");
+// Path definitions
+define('INIT_MGREX', __DIR__ . '/includes/init.php');
+define('SECURITY_MGREX', __DIR__ . '/includes/security.php');
+define('LOOP_MGREX', __DIR__ . '/includes/loop.php');
+define('FUNCTION_MGREX', __DIR__ . '/includes/functions.php');
+define('UPLOAD_MGREX', __DIR__ . '/includes/upload.php');
+define('IMAGES_MGREX', __DIR__ . '/includes/images.php');
+define('CMS_MGREX', __DIR__ . '/includes/cms.php');
+define('CACHE_MGREX', __DIR__ . '/includes/cache.php');
+define('PLUGIN_LOADER', __DIR__ . '/plugins/plugin_loader.php');
+define('THEME_LOADER', __DIR__ . '/themes/theme_loader.php');
 
 // Include the init file
 require_once INIT_MGREX;
@@ -34,6 +28,8 @@ require_once UPLOAD_MGREX;
 require_once IMAGES_MGREX;
 require_once CMS_MGREX;
 require_once CACHE_MGREX;
+require_once PLUGIN_LOADER; // plugin init (integration of plugins)
+require_once THEME_LOADER; // theme init (integration of plugins)
 
 // Initialize the CMS
 $cms = new CMS($pdo);
@@ -41,3 +37,6 @@ $cms = new CMS($pdo);
 // Start the user interface
 $cms->run();
 ?>
+
+
+
