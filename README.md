@@ -18,6 +18,7 @@
 
 > **IMPORTANT**  
 > ⚠️ MiniGreX is still in development. It works, but improvements are ongoing. Want to help? The smallest high-secure multi-CMS for DevOps 👮
+> Update 12.06.24 i kill it today. Later! not yet please!
 
 ## Security
 MiniGreX is designed with security in mind, minimizing the risk of SQL injection and other vulnerabilities. Keep MiniGreX up-to-date with the latest patches and use strong passwords for all accounts.
