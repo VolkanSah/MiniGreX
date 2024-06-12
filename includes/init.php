@@ -39,9 +39,9 @@ if ($_SERVER['HTTPS'] !== 'on') {
     exit();
 }
 
-// Load required files
-require_once "../plugins/plugin_loader.php"; // plugin init (intigration of plugins) // future init over security.php
-require_once "../themes/theme_loader.php"; // theme init (intigration of plugins) // future init over security.php
+// Load required files temp in /root/index.php! 
+// require_once "../plugins/plugin_loader.php"; // plugin init (intigration of plugins) // future init over security.php
+// require_once "../themes/theme_loader.php"; // theme init (intigration of plugins) // future init over security.php
 
 /* EN: In this code, we use PDO and prepared statements to ensure that all SQL queries are secure. We also define some constants
 for the names of our database tables and prepare commonly used queries to optimize the code and simplify maintenance. */
