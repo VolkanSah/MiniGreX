@@ -36,6 +36,10 @@ if (!checkLoginStatus()) {
     header('Location: ' . MGREX_LOGIN); // Redirect to login page if not logged in
     exit;
 }
+// Start the session
+session_start();
+// Set a session variable to control access
+$_SESSION['dashboard_access'] = true;
 
 // Dynamically load admin pages based on URL parameter
 $page = isset($_GET['page']) ? $_GET['page'] : 'dashboard'; // Default to dashboard
