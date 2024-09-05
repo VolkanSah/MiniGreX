@@ -14,13 +14,20 @@
  * 
  * 
  */
-require_once '../includes/init.php';
-require_once '../includes/functions.php';
+<?php
+// Start the session
+session_start();
 
-if (!checkLoginStatus()) {
-    header('Location: ../login.php');
+// Check if the page is accessed through the dashboard
+if (!isset($_SESSION['dashboard_access']) || $_SESSION['dashboard_access'] !== true) {
+    // If not, redirect to the dashboard or an error page
+    header('Location: dashboard.php');
     exit;
 }
+
+// Clear the session variable to prevent future access without dashboard
+unset($_SESSION['dashboard_access']);
+
 // Check befor sending formular
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Seitentitel und Meta-Informationen speichern
