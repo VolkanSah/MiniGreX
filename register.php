@@ -15,8 +15,8 @@
  * 
  */
 // load init.php
-require_once '/includes/init.php';
-require_once '/includes/security.php';
+require_once 'includes/init.php';
+require_once 'includes/security.php';
 
 // Überprüfen, ob das Formular abgeschickt wurde
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
