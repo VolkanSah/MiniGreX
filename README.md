@@ -16,78 +16,6 @@
 - [Credits](#credits)
 - [License](#license)
 
-```
-MiniGreX-dev_05.09.2024/
-└── .htaccess
-├── _logs/
-│   └── .htaccess
-├── assets/
-│   ├── css/
-│   │   └── README.md
-│   ├── js/
-│   │   └── README.md
-├── cache/
-│   └── .htaccess
-│   └── cache_db.php
-│   └── index.php
-├── error/
-│   └── 400.html
-│   └── 401.html
-│   └── 403.html
-│   └── 404.html
-│   └── 500.html
-├── includes/
-│   └── .htaccess
-│   └── cms.php
-│   └── functions.php
-│   └── images.php
-│   └── init.php
-│   └── loader.php
-│   └── security.php
-│   └── upload.php
-└── index.php
-└── login.php
-├── panel/
-│   └── admin.php
-│   ├── css/
-│   │   └── dashboard.css
-│   └── dashboard.php
-│   └── footer.php
-│   └── header.php
-│   └── navi.php
-│   └── option_settings.php
-│   └── user_settings.php
-├── plugins/
-│   ├── gateway_manager/
-│   │   └── README.md
-│   │   └── core.php
-│   └── image_db/
-│   │   └── README.md
-│   │   └── core.php
-│   │   └── imgdb_token.php
-│   └── plugin_loader.php
-│   ├── profile_manager/
-│   │   └── profile_manager.php
-│   ├── role_manager/
-│   │   └── core.php
-│   │   └── role_manager.php
-└── register.php
-└── sql.txt
-├── tests/
-│   └── test_cache.php
-│   └── test_db_connection.php
-├── themes/
-│   ├── default/
-│   │   ├── css/
-│   │   │   └── default.css
-│   │   ├── js/
-│   │   │   └── default.js
-│   │   ├── public/
-│   │   │   └── footer.php
-│   │   │   └── home.php
-│   │   │   └── sidebar.php
-└── theme_loader.php
-```
 
 > **IMPORTANT**  
 > ⚠️ MiniGreX is still in development. It works, but improvements are ongoing. Want to help? The smallest high-secure multi-CMS for DevOps 👮
@@ -131,7 +59,7 @@ To install MiniGreX CMS, follow these steps:
 - [ ] SEO Tools
 - [ ] Gateway Tools
 - [ ] Deep/Dark Web mode
-- [ ] Some admin stuff
+- [x] Some admin stuff
 - [ ] Profile Manager
 - [ ] Some secrets 😃
 
@@ -219,4 +147,78 @@ MiniGreX CMS is developed and maintained by:
 ## License
 
 MiniGreX CMS is licensed under a "MIT" [LICENSE](LICENSE). Feel free to use it for personal purposes and commercial purposes!
+
+### DATA
+```
+MiniGreX-dev_05.09.2024/
+└── .htaccess
+├── _logs/
+│   └── .htaccess
+├── assets/
+│   ├── css/
+│   │   └── README.md
+│   ├── js/
+│   │   └── README.md
+├── cache/
+│   └── .htaccess
+│   └── cache_db.php
+│   └── index.php
+├── error/
+│   └── 400.html
+│   └── 401.html
+│   └── 403.html
+│   └── 404.html
+│   └── 500.html
+├── includes/
+│   └── .htaccess
+│   └── cms.php
+│   └── functions.php
+│   └── images.php
+│   └── init.php
+│   └── loader.php
+│   └── security.php
+│   └── upload.php
+└── index.php
+└── login.php
+├── panel/
+│   └── admin.php
+│   ├── css/
+│   │   └── dashboard.css
+│   └── dashboard.php
+│   └── footer.php
+│   └── header.php
+│   └── navi.php
+│   └── option_settings.php
+│   └── user_settings.php
+├── plugins/
+│   ├── gateway_manager/
+│   │   └── README.md
+│   │   └── core.php
+│   └── image_db/
+│   │   └── README.md
+│   │   └── core.php
+│   │   └── imgdb_token.php
+│   └── plugin_loader.php
+│   ├── profile_manager/
+│   │   └── profile_manager.php
+│   ├── role_manager/
+│   │   └── core.php
+│   │   └── role_manager.php
+└── register.php
+└── sql.txt
+├── tests/
+│   └── test_cache.php
+│   └── test_db_connection.php
+├── themes/
+│   ├── default/
+│   │   ├── css/
+│   │   │   └── default.css
+│   │   ├── js/
+│   │   │   └── default.js
+│   │   ├── public/
+│   │   │   └── footer.php
+│   │   │   └── home.php
+│   │   │   └── sidebar.php
+└── theme_loader.php
+```
 
