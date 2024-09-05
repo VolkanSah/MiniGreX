@@ -34,13 +34,13 @@ define('MGREX_LOGIN', ROOT_PATH . 'login.php'); // Login page
 define('MGREX_REGISTER', ROOT_PATH . 'register.php'); // Registration page
 
 // Include the init files to initialize the system
-#require_once INIT_MGREX; // MiniGrex initialization
+require_once INIT_MGREX; // MiniGrex initialization
 require_once SECURITY_MGREX; // Security initialization
 #require_once LOOP_MGREX; // Loop system initialization
-#require_once FUNCTION_MGREX; // Functions initialization
+require_once FUNCTION_MGREX; // Functions initialization
 #require_once UPLOAD_MGREX; // Upload system initialization
 #require_once IMAGES_MGREX; // Image handling initialization
-#require_once CMS_MGREX; // Core CMS initialization
+require_once CMS_MGREX; // Core CMS initialization
 
 // Cache system
 #require_once CACHE_MGREX; // Cache initialization
