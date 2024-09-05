@@ -16,6 +16,104 @@
 - [Credits](#credits)
 - [License](#license)
 
+```
+MiniGreX-dev_17.06.2024/
+├── .github/
+│   └── FUNDING.yml
+└── .gitignore
+└── .htaccess
+└── README.md
+├── _logs/
+│   └── .htaccess
+├── assets/
+│   ├── css/
+│   │   └── README.md
+│   ├── js/
+│   │   └── README.md
+├── cache/
+│   └── .htaccess
+│   └── cache_db.php
+│   └── index.php
+├── docs/
+│   └── README.md
+│   ├── de/
+│   │   └── README.md
+│   │   └── admin-security.md
+│   │   └── core-security.md
+│   │   └── core_functions.md
+│   │   └── plugin_image_db.md
+│   │   └── plugin_seo_manager.md
+│   │   └── public-security.md
+│   │   └── security_upload_function.md
+│   │   └── social-integration.md
+│   └── en/
+│   │   └── README.md
+│   │   └── admin-security.md
+│   │   └── core-security.md
+│   │   └── core_functions.md
+│   │   └── plugin_image_db.md
+│   │   └── plugin_seo_manager.md
+│   │   └── public-security.md
+│   └── header_minigrex.png
+├── error/
+│   └── 400.html
+│   └── 401.html
+│   └── 403.html
+│   └── 404.html
+│   └── 500.html
+├── includes/
+│   └── .htaccess
+│   └── cms.php
+│   └── functions.php
+│   └── images.php
+│   └── init.php
+│   └── loader.php
+│   └── security.php
+│   └── upload.php
+└── index.php
+└── login.php
+├── panel/
+│   └── admin.php
+│   ├── css/
+│   │   └── dashboard.css
+│   └── dashboard.php
+│   └── footer.php
+│   └── header.php
+│   └── navi.php
+│   └── option_settings.php
+│   └── user_settings.php
+├── plugins/
+│   ├── gateway_manager/
+│   │   └── README.md
+│   │   └── core.php
+│   └── image_db/
+│   │   └── README.md
+│   │   └── core.php
+│   │   └── imgdb_token.php
+│   └── plugin_loader.php
+│   ├── profile_manager/
+│   │   └── profile_manager.php
+│   ├── role_manager/
+│   │   └── core.php
+│   │   └── role_manager.php
+└── register.php
+└── sql.txt
+├── tests/
+│   └── test_cache.php
+│   └── test_db_connection.php
+├── themes/
+│   ├── default/
+│   │   ├── css/
+│   │   │   └── default.css
+│   │   ├── js/
+│   │   │   └── default.js
+│   │   ├── public/
+│   │   │   └── footer.php
+│   │   │   └── home.php
+│   │   │   └── sidebar.php
+└── theme_loader.php
+```
+
 > **IMPORTANT**  
 > ⚠️ MiniGreX is still in development. It works, but improvements are ongoing. Want to help? The smallest high-secure multi-CMS for DevOps 👮
 > Update 12.06.24 i kill it today. Later! not yet please!
