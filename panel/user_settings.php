@@ -14,18 +14,19 @@
  * 
  * 
  */
-<?php
+require_once __DIR__ . '/../includes/loader.php'; // Load the loader file
+
 // Start the session
 session_start();
 
 // Check if the page is accessed through the dashboard
 if (!isset($_SESSION['dashboard_access']) || $_SESSION['dashboard_access'] !== true) {
-    // If not, redirect to the dashboard or an error page
-    header('Location: dashboard.php');
+    // Redirect to the dashboard using the defined constant
+    header('Location: ' . ADMIN_DASH);
     exit;
 }
 
-// Clear the session variable to prevent future access without dashboard
+// Clear the session variable after the check to prevent unauthorized future access
 unset($_SESSION['dashboard_access']);
 
 // Benutzer-ID aus der URL holen
