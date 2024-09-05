@@ -16,7 +16,8 @@
  */
 
 // include init.php
-require_once INIT_MGREX;
+
+require_once __DIR__ . '/includes/loader.php';
 
 // define the variable
 $category = isset($_GET['category']) ? $_GET['category'] : 'all';
