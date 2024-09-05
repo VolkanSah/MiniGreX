@@ -22,15 +22,17 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="dashboard.php">Dashboard</a>
+                    <a class="nav-link" href="dashboard.php?page=admin">Admin Settings</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="option_settings.php">Option Settings</a>
+                    <a class="nav-link" href="dashboard.php?page=user_settings">User Settings</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="user_settings.php">User Settings</a>
+                    <a class="nav-link" href="dashboard.php?page=option_settings">Option Settings</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
+
