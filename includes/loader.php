@@ -36,28 +36,28 @@ define('MGREX_REGISTER', ROOT_PATH . 'register.php'); // Registration page
 // Include the init files to initialize the system
 require_once INIT_MGREX; // MiniGrex initialization
 require_once SECURITY_MGREX; // Security initialization
-#require_once LOOP_MGREX; // Loop system initialization
+// require_once LOOP_MGREX; // Loop system initialization
 require_once FUNCTION_MGREX; // Functions initialization
-#require_once UPLOAD_MGREX; // Upload system initialization
-#require_once IMAGES_MGREX; // Image handling initialization
-#require_once CMS_MGREX; // Core CMS initialization
+//require_once UPLOAD_MGREX; // Upload system initialization
+//require_once IMAGES_MGREX; // Image handling initialization
+//require_once CMS_MGREX; // Core CMS initialization
 
 // Cache system
-#require_once CACHE_MGREX; // Cache initialization
+//require_once CACHE_MGREX; // Cache initialization
 
 // Plugin and theme loaders
-#require_once PLUGIN_LOADER; // Plugin integration initialization
-#require_once THEME_LOADER; // Theme integration initialization
+//require_once PLUGIN_LOADER; // Plugin integration initialization
+//require_once THEME_LOADER; // Theme integration initialization
 
 // Admin panel files
-#require_once ADMIN_PANEL; // Admin panel initialization
-#require_once ADMIN_DASH; // Admin dashboard initialization
-#require_once ADMIN_OPTION; // Admin option settings initialization
-#require_once ADMIN_USER_SETTINGS; // Admin user settings initialization
+//require_once ADMIN_PANEL; // Admin panel initialization
+//require_once ADMIN_DASH; // Admin dashboard initialization
+//require_once ADMIN_OPTION; // Admin option settings initialization
+//require_once ADMIN_USER_SETTINGS; // Admin user settings initialization
 
 // Public-facing files
-#require_once MGREX_INDEX; // Load main index file
-#require_once MGREX_LOGIN; // Load login file
-#require_once MGREX_REGISTER; // Load registration file
+//require_once MGREX_INDEX; // Load main index file
+//require_once MGREX_LOGIN; // Load login file
+//require_once MGREX_REGISTER; // Load registration file
 
 ?>
