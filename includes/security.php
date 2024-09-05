@@ -14,9 +14,6 @@
  * 
  */
 
-// include der "init.php"
-require_once INIT_MGREX;
-
 // Add security headers
 header("X-Frame-Options: DENY");
 header("X-Content-Type-Options: nosniff");
