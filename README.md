@@ -17,12 +17,8 @@
 - [License](#license)
 
 ```
-MiniGreX-dev_17.06.2024/
-├── .github/
-│   └── FUNDING.yml
-└── .gitignore
+MiniGreX-dev_05.09.2024/
 └── .htaccess
-└── README.md
 ├── _logs/
 │   └── .htaccess
 ├── assets/
@@ -34,27 +30,6 @@ MiniGreX-dev_17.06.2024/
 │   └── .htaccess
 │   └── cache_db.php
 │   └── index.php
-├── docs/
-│   └── README.md
-│   ├── de/
-│   │   └── README.md
-│   │   └── admin-security.md
-│   │   └── core-security.md
-│   │   └── core_functions.md
-│   │   └── plugin_image_db.md
-│   │   └── plugin_seo_manager.md
-│   │   └── public-security.md
-│   │   └── security_upload_function.md
-│   │   └── social-integration.md
-│   └── en/
-│   │   └── README.md
-│   │   └── admin-security.md
-│   │   └── core-security.md
-│   │   └── core_functions.md
-│   │   └── plugin_image_db.md
-│   │   └── plugin_seo_manager.md
-│   │   └── public-security.md
-│   └── header_minigrex.png
 ├── error/
 │   └── 400.html
 │   └── 401.html
