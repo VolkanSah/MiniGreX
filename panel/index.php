@@ -14,16 +14,28 @@
  * 
  * 
  */
-require_once '../includes/init.php';
-require_once '../includes/functions.php';
-require_once '../includes/security.php';
 
+require_once __DIR__ . '/../includes/loader.php'; // Adjusted the path
+
+// Include the init files to initialize the system
+require_once INIT_MGREX; // MiniGrex initialization
+require_once SECURITY_MGREX; // Security initialization
+require_once FUNCTION_MGREX; // Functions initialization
+require_once CMS_MGREX; // Core CMS initialization
+
+// Admin panel files
+require_once ADMIN_DASH; // Admin dashboard initialization
+
+// Public-facing files
+require_once MGREX_LOGIN; // Load login file
+
+// Check login status and redirect if not logged in
 if (!checkLoginStatus()) {
-    header('Location: ../login.php');
+    header('Location: ' . MGREX_LOGIN); 
     exit;
 }
 
-// Weiterleitung zum Dashboard
-header('Location: dashboard.php');
+// Redirect to the dashboard
+header('Location: ' . ADMIN_DASH); 
 exit;
 ?>
