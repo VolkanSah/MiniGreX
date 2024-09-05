@@ -19,7 +19,6 @@ require_once __DIR__ . '/../includes/loader.php'; // Load the loader file
 // Include the init files to initialize the system
 require_once INIT_MGREX; // MiniGrex initialization
 require_once SECURITY_MGREX; // Security initialization
-# require_once LOOP_MGREX; // Loop system initialization
 require_once FUNCTION_MGREX; // Functions initialization
 require_once UPLOAD_MGREX; // Upload system initialization
 require_once IMAGES_MGREX; // Image handling initialization
@@ -32,22 +31,30 @@ require_once CACHE_MGREX; // Cache initialization
 require_once PLUGIN_LOADER; // Plugin integration initialization
 require_once THEME_LOADER; // Theme integration initialization
 
-// Admin panel files
-require_once ADMIN_PANEL; // Admin panel initialization
-require_once ADMIN_DASH; // Admin dashboard initialization
-require_once ADMIN_OPTION; // Admin option settings initialization
-require_once ADMIN_USER_SETTINGS; // Admin user settings initialization
-
-// Public-facing files
-require_once MGREX_LOGIN; // Load login file
-
 // Check login status and redirect if not logged in
 if (!checkLoginStatus()) {
     header('Location: ' . MGREX_LOGIN); // Redirect to login page if not logged in
     exit;
 }
-?>
 
+// Dynamically load admin pages based on URL parameter
+$page = isset($_GET['page']) ? $_GET['page'] : 'dashboard'; // Default to dashboard
+
+switch ($page) {
+    case 'admin':
+        require_once ADMIN_PANEL; // Admin settings
+        break;
+    case 'user_settings':
+        require_once ADMIN_USER_SETTINGS; // User settings
+        break;
+    case 'option_settings':
+        require_once ADMIN_OPTION; // Option settings
+        break;
+    default:
+        require_once ADMIN_DASH; // Default to the dashboard
+        break;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,8 +69,7 @@ if (!checkLoginStatus()) {
     <?php require 'navi.php'; ?> <!-- Navigation bar -->
 
     <div class="container">
-        <h1>Welcome to the Admin Dashboard</h1>
-        <!-- Dashboard content goes here -->
+        <!-- The content will be dynamically loaded based on the page parameter -->
     </div>
 
     <?php require 'footer.php'; ?> <!-- Footer section -->
