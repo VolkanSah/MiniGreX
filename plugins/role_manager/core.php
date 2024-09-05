@@ -1,5 +1,8 @@
 <?php
-// Role Manager Plugin
+define('MGREX_ROLE_MANAGER', ROOT_PATH . 'role_manager.php'); // Initialization script
+require_once MGREX_ROLE_MANAGER; // MGREX_ROLE_MANAGER initialization
+
+// Role Manager Plugin functions
 
 function add_role($role_name) {
     global $pdo;
