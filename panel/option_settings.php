@@ -14,15 +14,19 @@
  * 
  * 
  */
-require_once '../includes/init.php';
-require_once '../includes/functions.php';
+// Start the session
+session_start();
 
-if (!checkLoginStatus()) {
-    header('Location: ../login.php');
+// Check if the page is accessed through the dashboard
+if (!isset($_SESSION['dashboard_access']) || $_SESSION['dashboard_access'] !== true) {
+    // If not, redirect to the dashboard or an error page
+    header('Location: dashboard.php');
     exit;
 }
 
-// Option Settings-spezifische Logik
+// Clear the session variable to prevent future access without dashboard
+unset($_SESSION['dashboard_access']);
+
 ?>
 
 <!DOCTYPE html>
