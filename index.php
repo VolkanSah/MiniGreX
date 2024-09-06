@@ -52,6 +52,7 @@ class MiniGreXCMS {
     public function __construct($pdo) {
         $this->pdo = $pdo;
         $this->cache = new Cache();
+        $this->LOOP_MGREX = $loop_mgrex;
     }
 
     public function run() {
