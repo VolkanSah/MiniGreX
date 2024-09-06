@@ -38,7 +38,7 @@ class MiniGreXCMS {
     require_once LOOP_MGREX; // Loop system initialization
     require_once UPLOAD_MGREX; // Upload system initialization
     require_once IMAGES_MGREX; // Image handling initialization
-    //require_once CMS_MGREX; // Core CMS initialization
+    //require_once CMS_MGREX; // Core CMS initialization !!!! ausgebaut!
 // Cache system
     require_once CACHE_MGREX; // Cache initialization
 // Plugin and theme loaders
@@ -52,12 +52,15 @@ class MiniGreXCMS {
     public function __construct($pdo) {
         $this->pdo = $pdo;
         $this->cache = new Cache();
-        $this->LOOP_MGREX = $loop_mgrex;
+        $this->run = $run;
+        $this->cms = $cms;
     }
 
     public function run() {
-        // Beispiel: Startseite laden
-        $this->loadPage('Location: THEME_LOADER');
+        // Beispiel
+        $this->loadPage('THEME_LOADER');
+        $this->loadPlugins('PLUGIN_LOADER');
+        $this->loadLoop('LOOP_MGREX');
     }
 
     private function loadPage($page) {
@@ -66,20 +69,21 @@ class MiniGreXCMS {
         if (file_exists($pagePath)) {
             require_once $pagePath;
         } else {
-            die('Seite nicht gefunden.');
+            die('Sorry! Site not found!.');
         }
     }
 
     // Cache-Funktionen
+// set cache
     public function cacheSet($key, $data, $ttl = 3600) {
         $this->cache->set($key, $data, $ttl);
     }
-
+// get cache-files
     public function cacheGet($key) {
         return $this->cache->get($key);
     }
 
-    // Weitere CMS-Funktionen hier hinzufügen
+    // other stuff, not yet ;)
 }
 
 // Initialize the CMS
