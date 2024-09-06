@@ -1,10 +1,17 @@
-<?php 
-// source https://github.com/VolkanSah/MiniGreX
-// content management system
-//  .-.   .-..-..-. .-..-. .---. .----. .----..-.  .-.
-//  |  `.'  || ||  `| || |/   __}| {}  }| {_   \ \/ / 
-//  | |\ /| || || |\  || |\  {_ }| .-. \| {__  / /\ \ 
-//  `-' ` `-'`-'`-' `-'`-' `---' `-' `-'`----'`-'  `-'
+<?php
+/**
+ *
+ * MiniGreX - designed with security in mind!
+ *
+ * @file    index.php
+ * @package MiniGreX
+ * @copyright  Volkan Kücükbudak 
+ * @version 0.9 Beta
+ * @license MIT
+ * @link    https://github.com/VolkanSah/MiniGreX
+ *
+ * Main Index-File of MiniGreX CMS
+ */
 //  Copyright @S. Volkan Kücükbudak
 require_once __DIR__ . '/includes/loader.php';
 require_once LOOP_MGREX; // Loop system initialization
