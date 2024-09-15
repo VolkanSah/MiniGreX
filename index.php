@@ -30,6 +30,7 @@ require_once MGREX_LOGIN; // Load login file
 require_once MGREX_REGISTER; // Load registration file
 */
 
+    require_once __DIR__ . '/includes/loader.php';
 
 class MiniGreXCMS {
     private $pdo;
