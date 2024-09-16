@@ -43,7 +43,7 @@ require_once FUNCTION_MGREX; // Functions initialization
 //require_once CMS_MGREX; // Core CMS initialization
 
 // Cache system
-//require_once CACHE_MGREX; // Cache initialization
+require_once CACHE_MGREX; // Cache initialization
 
 // Plugin and theme loaders
 //require_once PLUGIN_LOADER; // Plugin integration initialization
