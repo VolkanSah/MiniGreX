@@ -13,8 +13,6 @@
  * Core functions file
  * 
  */
-// load init.php
-require_once INIT_MGREX;
 
 // Add user
 function add_user($username, $password) {
