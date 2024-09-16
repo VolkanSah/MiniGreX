@@ -36,7 +36,7 @@ if ($_FILES['file']['size'] > 100000000) {
 }
 
 // Directory for uploads
-$upload_dir = "cache/uploads/";
+$upload_dir = "../cache/uploads/";
 
 // Function to generate a secure filename
 function generate_safe_filename($file_name) {
