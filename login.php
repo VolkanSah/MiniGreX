@@ -14,9 +14,7 @@
  * 
  * 
  */
-// load init.php
-require_once 'includes/init.php';
-require_once 'includes/security.php';
+require_once __DIR__ . '/includes/loader.php';
 
 // Wenn bereits angemeldet, dann weiterleiten zur Index-Seite
 if (is_logged_in()) {
