@@ -10,7 +10,7 @@
  * @license MIT
  * @link    https://github.com/VolkanSah/MiniGreX
  *
- * This is the public facing menu
+ * This is the public facing navibar
  */
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
