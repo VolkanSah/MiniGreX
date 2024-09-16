@@ -36,7 +36,7 @@ if ($_FILES['file']['size'] > 100000000) {
 }
 
 // Directory for uploads
-$upload_dir = "../cache/uploads/";
+$upload_dir = "../uploads/";
 
 // Function to generate a secure filename
 function generate_safe_filename($file_name) {
@@ -47,7 +47,7 @@ function generate_safe_filename($file_name) {
 }
 
 // Check if the file extension is allowed
-$allowed_types = array('jpg', 'jpeg', 'png', 'gif', 'mp4', 'avi', 'mov');
+$allowed_types = array('jpg', 'jpeg', 'png', 'gif', 'mp4', 'avi', 'mov', 'pdf', 'odt', 'doc', 'docx', 'mp3');
 $extension = strtolower(pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION));
 if (!in_array($extension, $allowed_types)) {
     die("Invalid file type");
