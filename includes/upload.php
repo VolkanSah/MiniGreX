@@ -14,8 +14,6 @@
  * The files are then saved in the appropriate folder and saved in the database
  */
 
-// include "init.php"
-require_once INIT_MGREX;
 
 // Check if a user is authenticated
 if (!isset($_SESSION['user_id'])) {
