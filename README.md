@@ -18,7 +18,7 @@
 
 
 > **IMPORTANT**  
-> ⚠️ MiniGreX is still in development. It works, but improvements are ongoing. Want to help? The smallest high-secure multi-CMS for DevOps 👮
+> ⚠️ MiniGreX is still in development.  Want to help? The smallest high-secure multi-CMS for DevOps 👮
 > Update 12.06.24 i kill it today. Later! not yet please!
 
 ## Security
