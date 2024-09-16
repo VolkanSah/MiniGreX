@@ -57,7 +57,6 @@ To install MiniGreX CMS, follow these steps:
 - [ ] Lazyload + Image Customizer 
 - [ ] Image & Video Database 
 - [ ] SEO Tools
-- [ ] Gateway Tools
 - [ ] Deep/Dark Web mode
 - [x] Some admin stuff
 - [ ] Profile Manager
