@@ -1,5 +1,6 @@
 
 # MiniGreX - Content Management Framework
+### DO NOT USE IT, STILL DEVLOP!
 
 ![MiniGreX Logo](docs/header_minigrex.png)
 
